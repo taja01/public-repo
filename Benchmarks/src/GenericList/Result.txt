@@ -1,0 +1,6 @@
+﻿|                    Method |            Mean |         Error |        StdDev |
+|-------------------------- |----------------:|--------------:|--------------:|
+|           Test_Any_Method |      22.5486 ns |     0.2699 ns |     0.2525 ns |
+|       Test_Count_Property |       0.0255 ns |     0.0150 ns |     0.0141 ns |
+|   Test_Generic_Any_Method |      50.2398 ns |     0.8715 ns |     0.8152 ns |
+| Test_Generic_Count_Method | 159,008.0108 ns | 3,002.3426 ns | 3,083.1848 ns |

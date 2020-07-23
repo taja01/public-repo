@@ -1,1 +1,5 @@
-﻿
+﻿|          Method |        Mean |       Error |      StdDev |
+|---------------- |------------:|------------:|------------:|
+|    TestIntParse | 93,014.8 ns | 1,578.66 ns | 1,318.26 ns |
+|       TestRegex |    821.7 ns |    15.88 ns |    15.60 ns |
+| TestIntTryParse |    142.9 ns |     1.83 ns |     1.43 ns |

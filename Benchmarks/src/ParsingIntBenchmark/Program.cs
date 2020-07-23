@@ -1,15 +1,15 @@
 ﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using BenchmarkDotNet.Running;
 
 namespace ParsingIntBenchmark
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             BenchmarkRunner.Run<Bench>();
         }
