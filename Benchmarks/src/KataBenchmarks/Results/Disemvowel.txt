@@ -1,0 +1,6 @@
+﻿|               Method |       Mean |    Error |    StdDev |
+|--------------------- |-----------:|---------:|----------:|
+| TestDisemvowelRegex1 | 3,865.0 ns | 77.06 ns | 130.85 ns |
+| TestDisemvowelRegex2 | 3,734.8 ns | 67.44 ns |  69.25 ns |
+|  TestDisemvowelLinQ1 |   990.3 ns | 19.00 ns |  47.33 ns |
+|  TestDisemvowelLinQ2 |   898.7 ns | 17.29 ns |  24.23 ns |

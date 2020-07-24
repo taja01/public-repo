@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsingIntBenchmark", "src\ParsingIntBenchmark\ParsingIntBenchmark.csproj", "{01ABBCEC-4DE4-4A81-99A1-DA94C010B941}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingIntBenchmark", "src\ParsingIntBenchmark\ParsingIntBenchmark.csproj", "{01ABBCEC-4DE4-4A81-99A1-DA94C010B941}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericListBenchmark", "src\GenericList\GenericListBenchmark.csproj", "{F22806FE-FD12-4191-BB81-EF112CDFD62E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericListBenchmark", "src\GenericList\GenericListBenchmark.csproj", "{F22806FE-FD12-4191-BB81-EF112CDFD62E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBenchmarks", "src\KataBenchmarks\KataBenchmarks.csproj", "{363E10DD-01E8-47A5-9129-578059439D4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F22806FE-FD12-4191-BB81-EF112CDFD62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F22806FE-FD12-4191-BB81-EF112CDFD62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F22806FE-FD12-4191-BB81-EF112CDFD62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363E10DD-01E8-47A5-9129-578059439D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363E10DD-01E8-47A5-9129-578059439D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363E10DD-01E8-47A5-9129-578059439D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363E10DD-01E8-47A5-9129-578059439D4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

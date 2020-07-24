@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F2FCE98E-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D759D28F-DD82-4A04-BF18-05D5772FC340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "src\MyLibrary\MyLibrary.csproj", "{AE181EAD-5D01-4B12-AB6E-BE902B83A8AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary", "src\MyLibrary\MyLibrary.csproj", "{AE181EAD-5D01-4B12-AB6E-BE902B83A8AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibraryTest", "test\MyLibraryTest\MyLibraryTest.csproj", "{80DEC401-2105-4AE6-B74C-63F7F165111E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibraryTest", "test\MyLibraryTest\MyLibraryTest.csproj", "{80DEC401-2105-4AE6-B74C-63F7F165111E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFunApp", "src\JsonFunApp\JsonFunApp.csproj", "{F79CC169-D283-44F2-ABFF-A1B7BAF55AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonFunApp", "src\JsonFunApp\JsonFunApp.csproj", "{F79CC169-D283-44F2-ABFF-A1B7BAF55AD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFunAppTest", "test\JsonFunAppTest\JsonFunAppTest.csproj", "{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonFunAppTest", "test\JsonFunAppTest\JsonFunAppTest.csproj", "{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeWarsXUnitTest", "test\CodeWarsXUnitTest\CodeWarsXUnitTest.csproj", "{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{80DEC401-2105-4AE6-B74C-63F7F165111E} = {F2FCE98E-0CED-4E91-B573-40B83F2A59FE}
 		{F79CC169-D283-44F2-ABFF-A1B7BAF55AD4} = {D759D28F-DD82-4A04-BF18-05D5772FC340}
 		{C5D9D423-6FDB-4FA3-878E-0B807624C8C5} = {F2FCE98E-0CED-4E91-B573-40B83F2A59FE}
+		{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB} = {F2FCE98E-0CED-4E91-B573-40B83F2A59FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72CCA91C-14F4-4288-9AE9-B69BDBF3FC1B}
