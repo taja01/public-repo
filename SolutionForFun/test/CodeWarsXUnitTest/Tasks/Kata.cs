@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.Tasks
 {
@@ -134,6 +135,50 @@ namespace CodeWarsTests.Tasks
             }
 
             return (int)s;
+        }
+
+        //Polycarpus works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance.
+        //Recently, he has decided to take a couple of old songs and make dubstep remixes from them.
+        //Let's assume that a song consists of some number of words (that don't contain WUB).
+        //To make the dubstep remix of this song, Polycarpus inserts a certain number of words "WUB" before the first word of the song (the number may be zero),
+        //after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words),
+        //and then the boy glues together all the words, including "WUB", in one string and plays the song at the club.
+        public static string SongDecoder(string input)
+        {
+            return Regex.Replace(input, "(WUB)+", " ").Trim();
+        }
+
+        public static int Multiples3_5(int value)
+        {
+            return Enumerable
+                 .Range(0, value)
+                 .Where(i => (i % 3 == 0 || i % 5 == 0))
+                 .Sum();
+        }
+
+        //Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid.
+        //The function should return true if the string is valid, and false if it's invalid.
+        public static bool ValidParentheses(string input)
+        {
+            var parentheses = 0;
+            foreach (char t in input)
+            {
+                if (t == '(')
+                {
+                    parentheses++;
+                }
+                else if (t == ')')
+                {
+                    parentheses--;
+
+                    if (parentheses < 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return parentheses == 0;
         }
     }
 }
