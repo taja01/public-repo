@@ -29,5 +29,16 @@ namespace CodeWarsXUnitTest.Tasks
 
             return xCount == oCount;
         }
+
+        public static int PositiveSum(int[] arr)
+        {
+            return arr.Where(x => x > 0).Sum();
+        }
+
+        //Write a function called repeatString which repeats the given String src exactly count times.
+        public static string RepeatStr(int n, string s)
+        {
+            return string.Concat(Enumerable.Repeat(s, n));
+        }
     }
 }
