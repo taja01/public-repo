@@ -1,11 +1,11 @@
-﻿using CodeWarsXUnitTest.Tasks;
-using Xunit;
+﻿using CodeWarsTests.Tasks;
+using NUnit.Framework;
 
-namespace CodeWarsXUnitTest.Tests
+namespace CodeWarsTests.Tests
 {
     public class XoTests
     {
-        [Fact]
+        [Test]
         public void Test1()
         {
             Assert.True(Kata.XO("xo"));

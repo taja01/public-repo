@@ -1,14 +1,14 @@
-﻿using CodeWarsXUnitTest.Tasks;
-using Xunit;
+﻿using CodeWarsTests.Tasks;
+using NUnit.Framework;
 
-namespace CodeWarsXUnitTest.Tests
+namespace CodeWarsTests.Tests
 {
     public class RepeatStrTests
     {
-        [Fact]
+        [Test]
         public void MyTest()
         {
-            Assert.Equal("***", Kata.RepeatStr(3, "*"));
+            Assert.AreEqual("***", Kata.RepeatStr(3, "*"));
         }
     }
 }

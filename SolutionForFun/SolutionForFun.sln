@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonFunApp", "src\JsonFunAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonFunAppTest", "test\JsonFunAppTest\JsonFunAppTest.csproj", "{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeWarsXUnitTest", "test\CodeWarsXUnitTest\CodeWarsXUnitTest.csproj", "{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeWarsTests", "test\CodeWarsXUnitTest\CodeWarsTests.csproj", "{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

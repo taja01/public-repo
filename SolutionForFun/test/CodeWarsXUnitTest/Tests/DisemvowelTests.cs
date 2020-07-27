@@ -1,14 +1,14 @@
-﻿using CodeWarsXUnitTest.Tasks;
-using Xunit;
+﻿using CodeWarsTests.Tasks;
+using NUnit.Framework;
 
-namespace CodeWarsXUnitTest.Tests
+namespace CodeWarsTests.Tests
 {
     public class DisemvowelTests
     {
-        [Fact]
+        [Test]
         public void ShouldRemoveAllVowels()
         {
-            Assert.Equal("Ths wbst s fr lsrs LL!", Kata.Disemvowel("This website is for losers LOL!"));
+            Assert.AreEqual("Ths wbst s fr lsrs LL!", Kata.Disemvowel("This website is for losers LOL!"));
         }
     }
 }
