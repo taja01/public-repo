@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppiumWindows", "src\Appium
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumWebDriverDemo", "src\SeleniumWebDriverDemo\SeleniumWebDriverDemo.csproj", "{7805871A-2091-406C-B4A4-61CA7C79263B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumWithBDD", "test\SeleniumWithBDD\SeleniumWithBDD.csproj", "{E515B66E-C6F3-4BF0-8BA2-3F0A0FEB71D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{7805871A-2091-406C-B4A4-61CA7C79263B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7805871A-2091-406C-B4A4-61CA7C79263B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7805871A-2091-406C-B4A4-61CA7C79263B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E515B66E-C6F3-4BF0-8BA2-3F0A0FEB71D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E515B66E-C6F3-4BF0-8BA2-3F0A0FEB71D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E515B66E-C6F3-4BF0-8BA2-3F0A0FEB71D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E515B66E-C6F3-4BF0-8BA2-3F0A0FEB71D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{54F26059-F10C-4E8D-AF8D-76A1DF31F8CB} = {F2FCE98E-0CED-4E91-B573-40B83F2A59FE}
 		{76B4A1F5-E0D0-41EE-BD7C-3DA1BA580990} = {D759D28F-DD82-4A04-BF18-05D5772FC340}
 		{7805871A-2091-406C-B4A4-61CA7C79263B} = {D759D28F-DD82-4A04-BF18-05D5772FC340}
+		{E515B66E-C6F3-4BF0-8BA2-3F0A0FEB71D7} = {F2FCE98E-0CED-4E91-B573-40B83F2A59FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72CCA91C-14F4-4288-9AE9-B69BDBF3FC1B}

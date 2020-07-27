@@ -1,16 +1,21 @@
-﻿using System.Collections.Generic;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using System.Collections.Generic;
 
 namespace SeleniumWebDriverDemo.PageObjects.Google
 {
-    internal class GoogleResultPage
+    public class GoogleResultPage : AbstractPage
     {
-        private readonly IWebDriver driver;
-        public GoogleResultPage(IWebDriver driver)
+
+        public GoogleResultPage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
         }
 
+        public IWebElement Logo => this.driver.FindElement(By.Id("logo"));
         public IReadOnlyCollection<IWebElement> Results => this.driver.FindElements(By.CssSelector("#rso div.r > a"));
+
+        public override bool IsLoaded()
+        {
+            return this.Logo.Displayed;
+        }
     }
 }

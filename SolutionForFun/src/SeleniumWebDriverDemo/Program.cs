@@ -14,13 +14,14 @@ namespace SeleniumWebDriverDemo
             var driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = new TimeSpan(0, 0, 10);
             driver.Manage().Window.Maximize();
-            driver.Url = "https://www.google.com/?hl=en";
 
             var mainPage = new GoogleMainPage(driver);
+            mainPage.Load();
             mainPage.SearchField.SendKeys("42");
             mainPage.SearchButton.Click();
 
             var googleResultPage = new GoogleResultPage(driver);
+            Assert.IsTrue(googleResultPage.IsLoaded(), "Result page not loaded");
             googleResultPage.Results.First(x => x.GetAttribute("href").Contains("Phrases_from_The_Hitchhiker")).Click();
 
             var wikiPage = new WikiPage(driver);
@@ -29,7 +30,6 @@ namespace SeleniumWebDriverDemo
             Assert.Greater(wikiPage.HeadLines_2.Count, 0);
             Assert.Greater(wikiPage.HeadLines_3.Count, 0);
 
-            driver.Close();
             driver.Quit();
         }
     }
