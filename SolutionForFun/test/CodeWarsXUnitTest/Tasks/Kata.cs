@@ -180,5 +180,53 @@ namespace CodeWarsTests.Tasks
 
             return parentheses == 0;
         }
+
+        //Your task in order to complete this Kata is to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
+        //The function must accept a non-negative integer. If it is zero, it just returns "now".
+        //Otherwise, the duration is expressed as a combination of years, days, hours, minutes and seconds.
+        public static string formatDuration(int seconds)
+        {
+            int RemainSeconds(int currentRange, string nameOfRange, ref string str1)
+            {
+                var usedRange = seconds / currentRange;
+                seconds %= currentRange;
+                
+                if (usedRange <= 0)
+                {
+                    return seconds;
+                }
+
+                var s = usedRange > 1 ? "s" : "";
+                if (string.IsNullOrEmpty(str1))
+                {
+                    str1 = $"{usedRange} {nameOfRange}{s}";
+                }
+                else
+                {
+                    var extend = seconds > 0 ? ", " : " and ";
+                    str1 += $"{extend}{usedRange} {nameOfRange}{s}";
+                }
+
+                return seconds;
+            }
+
+            if (seconds == 0)
+            {
+                return "now";
+            }
+            var str = string.Empty;
+            var sec_in_min = 60;
+            var min_in_hour = sec_in_min * 60;
+            var hour_in_day = min_in_hour * 24;
+            var day_in_year = hour_in_day * 365;
+
+            seconds = RemainSeconds(day_in_year, "year", ref str);
+            seconds = RemainSeconds(hour_in_day, "day", ref str);
+            seconds = RemainSeconds(min_in_hour, "hour", ref str);
+            seconds = RemainSeconds(sec_in_min, "minute", ref str);
+            seconds = RemainSeconds(1, "second", ref str);
+
+            return str;
+        }
     }
 }
