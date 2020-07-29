@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -190,7 +191,7 @@ namespace CodeWarsTests.Tasks
             {
                 var usedRange = seconds / currentRange;
                 seconds %= currentRange;
-                
+
                 if (usedRange <= 0)
                 {
                     return seconds;
@@ -228,5 +229,54 @@ namespace CodeWarsTests.Tasks
 
             return str;
         }
+
+        public static int FirstDuplicate(int[] a)
+        {
+            var hs = new HashSet<int>();
+            foreach (var t in a)
+            {
+                if (hs.Contains(t))
+                    return t;
+                hs.Add(t);
+            }
+            return -1;
+        }
+
+        public static int CenturyFromYear(int year)
+        {
+            return --year / 100 + 1;
+        }
+
+        public static bool CheckPalindrome(string inputString)
+        {
+            //return new string(inputString.Reverse().ToArray()) == inputString;
+            return inputString.SequenceEqual(inputString.Reverse());
+        }
+
+        public static int AdjacentElementsProduct(int[] inputArray)
+        {
+            var max = int.MinValue;
+            for (var i = 0; i < inputArray.Length - 1; i++)
+            {
+                var s = inputArray[i] * inputArray[i + 1];
+                if (s > max)
+                {
+                    max = s;
+                }
+            }
+
+            return max;
+        }
+
+        public static bool ContainsDuplicates(int[] a)
+        {
+            return a.Length != a.Distinct().Count();
+        }
+
+        public static string AmendTheSentence(string s)
+        {
+            return Regex.Replace(s, "[A-Z]", m => " " + m.Value.ToLower()).Trim();
+        }
+
     }
 }
