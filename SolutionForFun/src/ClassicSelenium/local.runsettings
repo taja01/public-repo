@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<RunSettings>
+    <TestRunParameters>
+        <Parameter name ="Device" value="Desktop" />
+        <Parameter name ="Environment" value="Test" />
+        <Parameter name ="Browser" value="Chrome" />
+    </TestRunParameters>
+</RunSettings>
