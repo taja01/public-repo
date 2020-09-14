@@ -97,7 +97,7 @@ namespace CodeWarsTests.Tasks
 
         //Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers.
         //No floats or non-positive integers will be passed.
-        public static int sumTwoSmallestNumbers(int[] numbers)
+        public static int SumTwoSmallestNumbers(int[] numbers)
         {
             return numbers.OrderBy(x => x).Take(2).Sum();
         }
@@ -185,7 +185,7 @@ namespace CodeWarsTests.Tasks
         //Your task in order to complete this Kata is to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
         //The function must accept a non-negative integer. If it is zero, it just returns "now".
         //Otherwise, the duration is expressed as a combination of years, days, hours, minutes and seconds.
-        public static string formatDuration(int seconds)
+        public static string FormatDuration(int seconds)
         {
             int RemainSeconds(int currentRange, string nameOfRange, ref string str1)
             {
