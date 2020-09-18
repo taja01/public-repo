@@ -284,5 +284,19 @@ namespace CodeWarsTests.Tasks
             return arr.OrderBy(x => x == 0).ToArray();
         }
 
+        public static int matrixElementsSum(int[][] matrix)
+        {
+            var sum = 0;
+            for (var i = 0; i < matrix[0].Length; i++)
+            {
+                for (var j = 0; j < matrix.Length && matrix[j][i] > 0; j++)
+                {
+                    sum += matrix[j][i];
+                }
+            }
+
+            return sum;
+        }
+
     }
 }
