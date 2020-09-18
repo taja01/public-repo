@@ -14,8 +14,7 @@ namespace CodeWarsTests.Tests
             arr[1] = new int[] { 0, 5, 0, 0 };
             arr[2] = new int[] { 2, 0, 3, 3 };
 
-
-            Assert.AreEqual(9, Kata.matrixElementsSum(arr));
+            Assert.AreEqual(9, Kata.MatrixElementsSum(arr));
         }
     }
 }

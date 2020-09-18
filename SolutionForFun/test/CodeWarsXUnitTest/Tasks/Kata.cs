@@ -284,7 +284,7 @@ namespace CodeWarsTests.Tasks
             return arr.OrderBy(x => x == 0).ToArray();
         }
 
-        public static int matrixElementsSum(int[][] matrix)
+        public static int MatrixElementsSum(int[][] matrix)
         {
             var sum = 0;
             for (var i = 0; i < matrix[0].Length; i++)
@@ -296,6 +296,15 @@ namespace CodeWarsTests.Tasks
             }
 
             return sum;
+        }
+
+        //Given an array of strings, return another array containing all of its longest strings.
+        public static string[] AllLongestStrings(string[] inputArray)
+        {
+            var ordered = inputArray.OrderByDescending(x => x.Length).ToList();
+            var biggest = ordered.First().Length;
+
+            return ordered.TakeWhile(x => x.Length == biggest).ToArray();
         }
 
     }
