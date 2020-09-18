@@ -278,5 +278,11 @@ namespace CodeWarsTests.Tasks
             return Regex.Replace(s, "[A-Z]", m => " " + m.Value.ToLower()).Trim();
         }
 
+        //Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+        public static int[] MoveZeroes(int[] arr)
+        {
+            return arr.OrderBy(x => x == 0).ToArray();
+        }
+
     }
 }
