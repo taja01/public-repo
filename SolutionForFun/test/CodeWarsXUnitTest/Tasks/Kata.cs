@@ -307,5 +307,17 @@ namespace CodeWarsTests.Tasks
             return ordered.TakeWhile(x => x.Length == biggest).ToArray();
         }
 
+        //Given two strings, find the number of common characters between them
+        public static int CommonCharacterCount(string s1, string s2)
+        {
+            var count = 0;
+            foreach (var index in s1.Select(c => s2.IndexOf(c)).Where(index => index >= 0))
+            {
+                s2 = s2.Remove(index, 1);
+                count++;
+            }
+
+            return count;
+        }
     }
 }
