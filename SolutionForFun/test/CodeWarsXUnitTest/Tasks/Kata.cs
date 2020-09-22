@@ -319,5 +319,20 @@ namespace CodeWarsTests.Tasks
 
             return count;
         }
+
+        /*
+         * Ticket numbers usually consist of an even number of digits.
+         * A ticket number is considered lucky if the sum of the first half of the digits is equal to the sum of the second half.
+         * Given a ticket number n, determine if it's lucky or not.
+         */
+        public static bool IsLucky(int n)
+        {
+            var number = n.ToString();
+            var firstHalf = number.Take(number.Length / 2).Sum(c => int.Parse(c.ToString()));
+            var secondHalf = number.TakeLast(number.Length / 2).Sum(c => int.Parse(c.ToString()));
+
+            return firstHalf == secondHalf;
+        }
+
     }
 }
