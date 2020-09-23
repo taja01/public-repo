@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\JsonFunApp\JsonFunApp.csproj" />
+    <ProjectReference Include="..\..\src\JsonFunApp\Regres.csproj" />
   </ItemGroup>
 
   <ItemGroup>
