@@ -1,7 +1,7 @@
-﻿using Regres.Response;
+﻿using CommonApi.Regres.Response;
 using RestSharp;
 
-namespace Regres
+namespace CommonApi.Regres
 {
     public class ReqresInService : AbstractService
     {

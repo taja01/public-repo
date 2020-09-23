@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F2FCE98E-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D759D28F-DD82-4A04-BF18-05D5772FC340}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regres", "src\Regres\Regres.csproj", "{F79CC169-D283-44F2-ABFF-A1B7BAF55AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonApi", "src\CommonApi\CommonApi.csproj", "{F79CC169-D283-44F2-ABFF-A1B7BAF55AD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegresTest", "test\RegresTest\RegresTest.csproj", "{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTests", "test\ApiTests\ApiTests.csproj", "{C5D9D423-6FDB-4FA3-878E-0B807624C8C5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppiumWindows", "src\AppiumWindows\AppiumWindows.csproj", "{76B4A1F5-E0D0-41EE-BD7C-3DA1BA580990}"
 EndProject

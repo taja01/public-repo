@@ -1,10 +1,11 @@
+using CommonApi.Regres;
 using NUnit.Framework;
-using Regres;
 using System.Net;
 
-namespace RegresTest
+namespace ApiTests.RegresTest
 {
-    public class ReqresInServiceTest
+    [TestFixture]
+    public class RegrestServiceTest
     {
         private ReqresInService service;
 
@@ -31,5 +32,6 @@ namespace RegresTest
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(response.Data.Users.Count, Is.GreaterThan(1));
         }
+
     }
 }

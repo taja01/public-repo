@@ -13,13 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Regres\Regres.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="RestSharpFramework">
-      <HintPath>..\..\src\Regres\ExternalFiles\RestSharpFramework.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\src\CommonApi\CommonApi.csproj" />
   </ItemGroup>
 
 </Project>

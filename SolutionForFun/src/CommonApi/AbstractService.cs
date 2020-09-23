@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace Regres
+namespace CommonApi
 {
     public abstract class AbstractService
     {

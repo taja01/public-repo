@@ -1,9 +1,9 @@
-﻿using Regres.Dto;
+﻿using CommonApi.Regres.Dto;
 using Newtonsoft.Json;
 using RestSharp.Deserializers;
 using System.Collections.Generic;
 
-namespace Regres.Response
+namespace CommonApi.Regres.Response
 {
     public class UserListResponse
     {
