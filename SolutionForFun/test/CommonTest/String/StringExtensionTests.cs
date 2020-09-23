@@ -1,4 +1,4 @@
-using MyLibrary;
+using CommonTest;
 using NUnit.Framework;
 
 namespace MyLibraryTest

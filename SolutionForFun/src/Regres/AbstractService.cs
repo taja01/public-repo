@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace JsonFunApp
+namespace Regres
 {
     public abstract class AbstractService
     {

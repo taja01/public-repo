@@ -1,9 +1,9 @@
-﻿using JsonFunApp.Dto;
+﻿using Regres.Dto;
 using Newtonsoft.Json;
 using RestSharp.Deserializers;
 using System.Collections.Generic;
 
-namespace JsonFunApp.Response
+namespace Regres.Response
 {
     public class UserListResponse
     {

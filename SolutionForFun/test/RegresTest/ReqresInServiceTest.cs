@@ -1,8 +1,8 @@
-using JsonFunApp;
 using NUnit.Framework;
+using Regres;
 using System.Net;
 
-namespace JsonFunAppTest
+namespace RegresTest
 {
     public class ReqresInServiceTest
     {

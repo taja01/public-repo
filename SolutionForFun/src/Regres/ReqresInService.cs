@@ -1,7 +1,7 @@
-﻿using JsonFunApp.Response;
+﻿using Regres.Response;
 using RestSharp;
 
-namespace JsonFunApp
+namespace Regres
 {
     public class ReqresInService : AbstractService
     {

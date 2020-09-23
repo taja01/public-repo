@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace JsonFunApp.Dto
+namespace Regres.Dto
 {
     public class User
     {
