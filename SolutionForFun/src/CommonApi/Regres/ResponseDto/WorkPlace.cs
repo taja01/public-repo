@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace CommonApi.Regres.Dto
+namespace CommonApi.Regres.ResponseDto
 {
     public class WorkPlace
     {

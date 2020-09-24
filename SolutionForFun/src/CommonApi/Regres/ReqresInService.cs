@@ -1,4 +1,4 @@
-﻿using CommonApi.Regres.Response;
+﻿using CommonApi.Regres.ResponseDto;
 using RestSharp;
 
 namespace CommonApi.Regres

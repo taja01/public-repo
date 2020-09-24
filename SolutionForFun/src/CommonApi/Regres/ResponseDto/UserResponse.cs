@@ -1,8 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CommonApi.Regres.Dto;
 using RestSharp.Deserializers;
 
-namespace CommonApi.Regres.Response
+namespace CommonApi.Regres.ResponseDto
 {
     public class UserResponse
     {
