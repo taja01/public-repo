@@ -357,5 +357,29 @@ namespace CodeWarsTests.Tasks
             return a;
         }
 
+
+        /*
+         * Write a function that reverses characters in (possibly nested) parentheses in the input string.
+         * Input strings will always be well-formed with matching ()s.
+         * For inputString = "(bar)", the output should be reverseInParentheses(inputString) = "rab";
+         */
+        public static string ReverseInParentheses(string inputString)
+        {
+            static string ReverseString(string str)
+            {
+                var array = str.ToCharArray().Skip(1).SkipLast(1).ToArray();
+                Array.Reverse(array);
+                return new string(array);
+            }
+
+            while (inputString.Contains("("))
+            {
+                inputString = Regex.Replace(inputString, @"\(\)|\(([^\) ^\(]+)\)", m => ReverseString(m.Value));
+            }
+
+            return inputString;
+        }
+
+
     }
 }
