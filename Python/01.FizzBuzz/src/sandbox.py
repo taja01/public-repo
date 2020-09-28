@@ -1,4 +1,4 @@
-from os import pipe
+from person import Person
 
 def writeCarsDetails(array):
     print("*" * 10)
@@ -17,14 +17,21 @@ print(i)
 i = "a"
 print(i)
 
+# arrays:
 cars = ["Bmw", "Hyundai", "Mazda"]
 writeCarsDetails(cars)
 
 
 print("remove last car")
-cars.pop(0)
+cars.pop()
 writeCarsDetails(cars)
 
 print("add new one")
 cars.append("Toyota")
 writeCarsDetails(cars)
+
+#classes:
+print("classes:")
+
+p1 = Person("Thomas", "PythonLearner")
+p1.printDetails()

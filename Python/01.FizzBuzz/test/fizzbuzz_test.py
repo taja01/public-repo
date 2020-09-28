@@ -1,7 +1,7 @@
 import unittest
 from src.Kata import fizzBuzz
 
-class TestFizzBuzz(unittest.TestCase):
+class FizzBuzzTest(unittest.TestCase):
     def test_returns1With1PassedIn(self):
         retVal = fizzBuzz(1)
         self.assertEqual("1", retVal)
