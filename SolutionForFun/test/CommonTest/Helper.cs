@@ -8,9 +8,9 @@ namespace CommonTest
     public static class Helper
     {
         //https://docs.microsoft.com/en-us/globalization/locale/sorting-and-string-comparison
-        public static bool IsInAlphabeticalOrder(IList<string> list, string cultureInfo, out string message)
+        public static bool IsInAlphabeticalOrder(IList<string> list, string cultureCode, out string message)
         {
-            var compareInfo = CultureInfo.GetCultureInfo(cultureInfo).CompareInfo;
+            var compareInfo = CultureInfo.GetCultureInfo(cultureCode).CompareInfo;
             message = null;
             var current = list.First();
             foreach (var item in list.Skip(1))
@@ -22,7 +22,7 @@ namespace CommonTest
 
                 if (result > 0)
                 {
-                    message = $"Alphabetical order problem: {next} is before the {current}";
+                    message = $"Alphabetical order problem: '{next}' is before than '{current}'";
                     return false;
                 }
 
