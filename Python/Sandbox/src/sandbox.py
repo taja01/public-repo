@@ -30,6 +30,19 @@ print("add new one")
 cars.append("Toyota")
 writeCarsDetails(cars)
 
+# list
+thislist = ["apple", "banana", "cherry"]
+
+# tuple
+thistuple = ("apple", "banana", "cherry")
+
+# set
+fruits = {"apple", "banana", "cherry", "mango"}
+more_fruits = ["orange", "mango", "grapes"]
+fruits.update(more_fruits)
+for f in fruits:
+    print(f)
+
 #classes:
 print("classes:")
 

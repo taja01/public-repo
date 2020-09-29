@@ -20,3 +20,15 @@ from the year 101 up to and including the year 200, etc.
 """
 def centuryFromYear(year):
     return (year + 99) // 100
+
+import locale
+
+def isInAlphabeticalOrder(list, marketCode):
+    locale.setlocale(locale.LC_ALL, marketCode)
+    current = list[0]
+    for next in list[1:]:
+        if locale.strcoll(current, next) == 1:
+            return False
+        current = next
+        
+    return True

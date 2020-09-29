@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace CommonTest.String
 {
     [TestFixture]
-    public class CollectionTest
+    public partial class CollectionTest
     {
         [Test]
         public void Test0()
@@ -50,6 +50,22 @@ namespace CommonTest.String
         public void Test5()
         {
             var collection = new List<string> { "Esports", "Κρίκετ", "Μπάσκετ", "Πινγκ-Πονγκ", "Τένις", "Χόκεϊ επί πάγου" };
+            Assert.IsTrue(Helper.IsInAlphabeticalOrder(collection, "el-CY", out var message));
+            Assert.IsNull(message);
+        }
+
+        [Test]
+        public void Test6()
+        {
+            var collection = new List<string> { "Α", "Β", "Γ", "Δ", "Ε", "Ζ", "Η", "Θ" };
+            Assert.IsTrue(Helper.IsInAlphabeticalOrder(collection, "el-CY", out var message));
+            Assert.IsNull(message);
+        }
+
+        [Test]
+        public void Test8()
+        {
+            var collection = new List<string> { "f", "ζ" };
             Assert.IsTrue(Helper.IsInAlphabeticalOrder(collection, "el-CY", out var message));
             Assert.IsNull(message);
         }
