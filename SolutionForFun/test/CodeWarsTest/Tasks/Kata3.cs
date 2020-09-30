@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace CodeWarsTests.Tasks
 {
@@ -38,5 +39,15 @@ namespace CodeWarsTests.Tasks
             return c;
         }
 
+        /*
+         * Call two arms equally strong if the heaviest weights they each are able to lift are equal.
+         * Call two people equally strong if their strongest arms are equally strong (the strongest arm can be both the right and the left), and so are their weakest arms.
+         * Given your and your friend's arms' lifting capabilities find out if you two are equally strong.         * 
+         */
+        public static bool AreEquallyStrong(int yourLeft, int yourRight, int friendsLeft, int friendsRight)
+        {
+            return Math.Max(yourLeft, yourRight) == Math.Max(friendsLeft, friendsRight)
+                && Math.Min(yourLeft, yourRight) == Math.Min(friendsLeft, friendsRight);
+        }
     }
 }
