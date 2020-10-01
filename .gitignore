@@ -5,3 +5,4 @@
 **/shelf/
 **/workspace.xml
 *.class
+/Java/TestApi/lib/
