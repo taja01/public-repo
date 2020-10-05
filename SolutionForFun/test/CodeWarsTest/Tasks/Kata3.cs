@@ -49,5 +49,23 @@ namespace CodeWarsTests.Tasks
             return Math.Max(yourLeft, yourRight) == Math.Max(friendsLeft, friendsRight)
                 && Math.Min(yourLeft, yourRight) == Math.Min(friendsLeft, friendsRight);
         }
+
+        //Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+        public static int ArrayMaximalAdjacentDifference(int[] inputArray)
+        {
+            var max = int.MinValue;
+            var diff = int.MinValue;
+            for (int i = 1; i < inputArray.Length - 1; i++)
+            {
+                diff = Math.Abs(inputArray[i - 1] - inputArray[i]);
+                if (diff > max)
+                {
+                    max = diff;
+                }
+            }
+
+            return diff;
+        }
+
     }
 }

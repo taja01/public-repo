@@ -32,3 +32,7 @@ def isInAlphabeticalOrder(list, marketCode):
         current = next
         
     return True
+
+#Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+def arrayMaximalAdjacentDifference(a):
+    return max([abs(a[i]-a[i+ 1]) for i in range(len(a)-1)])
