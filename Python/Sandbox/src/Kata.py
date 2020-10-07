@@ -36,3 +36,12 @@ def isInAlphabeticalOrder(list, marketCode):
 #Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
 def arrayMaximalAdjacentDifference(a):
     return max([abs(a[i]-a[i+ 1]) for i in range(len(a)-1)])
+
+"""
+An IP address is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication. 
+There are two versions of the Internet protocol, and thus two versions of addresses. 
+One of them is the IPv4 address.
+"""
+def isIPv4Address(s):
+    array = s.split('.')
+    return len(array) == 4 and all(x.isdigit() and 0 <= int(x) < 256  for x in array)

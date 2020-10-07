@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.Tasks
 {
@@ -42,7 +43,7 @@ namespace CodeWarsTests.Tasks
         /*
          * Call two arms equally strong if the heaviest weights they each are able to lift are equal.
          * Call two people equally strong if their strongest arms are equally strong (the strongest arm can be both the right and the left), and so are their weakest arms.
-         * Given your and your friend's arms' lifting capabilities find out if you two are equally strong.         * 
+         * Given your and your friend's arms' lifting capabilities find out if you two are equally strong.
          */
         public static bool AreEquallyStrong(int yourLeft, int yourRight, int friendsLeft, int friendsRight)
         {
@@ -53,19 +54,47 @@ namespace CodeWarsTests.Tasks
         //Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
         public static int ArrayMaximalAdjacentDifference(int[] inputArray)
         {
-            var max = int.MinValue;
-            var diff = int.MinValue;
-            for (int i = 1; i < inputArray.Length - 1; i++)
+            var max = 0;
+
+            for (int i = 1; i < inputArray.Length; i++)
             {
-                diff = Math.Abs(inputArray[i - 1] - inputArray[i]);
-                if (diff > max)
-                {
-                    max = diff;
-                }
+                max = Math.Max(max, Math.Abs(inputArray[i - 1] - inputArray[i]));
             }
 
-            return diff;
+            return max;
         }
+
+        /*
+         * An IP address is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication. 
+         * There are two versions of the Internet protocol, and thus two versions of addresses. 
+         * One of them is the IPv4 address.
+         */
+
+        public static bool IsIPv4Address(string inputString)
+        {
+            //0
+            //return System.Net.IPAddress.TryParse(inputString, out _);
+
+            //1
+            if (Regex.IsMatch(inputString, @"^(([0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-5][0-9])\.){3}([0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-5][0-9])$"))
+            {
+                var array = inputString.Split('.');
+
+                foreach (var item in array)
+                {
+                    if (int.TryParse(item, out var result))
+                    {
+                        if (result > 255)
+                            return false;
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
 
     }
 }

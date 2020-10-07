@@ -21,7 +21,7 @@ namespace CodeWarsTests.Tests
         [Test]
         public void Test3()
         {
-            CollectionAssert.AreEqual(new int[] { 80, 0 }, Kata.AlternatingSums(new int[] { 8 }));
+            CollectionAssert.AreEqual(new int[] { 80, 0 }, Kata.AlternatingSums(new int[] { 80 }));
         }
 
         [Test]
