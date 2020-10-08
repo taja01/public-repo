@@ -95,6 +95,66 @@ namespace CodeWarsTests.Tasks
             return false;
         }
 
+        // take the first element from an array, then the last, then the second, then the last but one in an alternating way.
+        //return Boolean whether the elements are sorted
+
+        public static bool AlternatingSort(int[] a)
+        {
+
+            var d = new int[a.Length];
+            var j = 0;
+            var k = a.Length - 1;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    d[i] = a[j++];
+                }
+                else
+                {
+                    d[i] = a[k--];
+                }
+            }
+
+            for (int i = 1; i < d.Length; i++)
+            {
+                if (d[i - 1] >= d[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /*
+         * Given 2 strings, merge them in an alternate way, i.e. the final string’s first character is the first character of the first string, 
+         * the second character of the final string is the first character of the second string and so on. And if once you reach end of one string while 
+         * if another string is still remaining then append the remaining of that string to final string
+         */
+        public static string MergeStrings(string s1, string s2)
+        {
+            var str = string.Empty;
+
+            var s1_index = 0;
+            var s2_index = 0;
+
+            for (int i = 0; i < s1.Length + s2.Length; i++)
+            {
+                if (s1_index < s1.Length)
+                {
+                    str += s1[s1_index++];
+                }
+
+                if (s2_index < s2.Length)
+                {
+                    str += s2[s2_index++];
+                }
+            }
+
+            return str;
+        }
 
     }
 }
