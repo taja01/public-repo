@@ -156,5 +156,11 @@ namespace CodeWarsTests.Tasks
             return str;
         }
 
+
+        //Given an array of integers, replace all the occurrences of elemToReplace with substitutionElem.
+        public static int[] ArrayReplace(int[] inputArray, int elemToReplace, int substitutionElem)
+        {
+            return inputArray.Select(_ => _ == elemToReplace ? substitutionElem : _).ToArray();
+        }
     }
 }
