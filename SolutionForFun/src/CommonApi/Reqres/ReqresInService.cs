@@ -1,7 +1,7 @@
-﻿using CommonApi.Regres.ResponseDto;
+﻿using CommonApi.Reqres.ResponseDto;
 using RestSharp;
 
-namespace CommonApi.Regres
+namespace CommonApi.Reqres
 {
     public class ReqresInService : AbstractService
     {
@@ -18,6 +18,16 @@ namespace CommonApi.Regres
         public IRestResponse<UserListResponse> GetUserList()
         {
             return base.Get<UserListResponse>("users?page=2");
+        }
+
+        public TimedRestResponse<UserListResponse> GetDelayedUsers(int delay)
+        {
+            return base.Get2<UserListResponse>($"users?delay={delay}");
+        }
+
+        public IRestResponse<UserListResponse> GetDelayedUsers2(int delay)
+        {
+            return base.GetAsync<UserListResponse>($"users?delay={delay}").Result;
         }
     }
 }

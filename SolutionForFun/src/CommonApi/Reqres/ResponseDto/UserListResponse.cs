@@ -2,7 +2,7 @@
 using RestSharp.Deserializers;
 using System.Collections.Generic;
 
-namespace CommonApi.Regres.ResponseDto
+namespace CommonApi.Reqres.ResponseDto
 {
     public class UserListResponse
     {

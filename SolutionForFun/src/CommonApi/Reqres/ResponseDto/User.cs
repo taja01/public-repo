@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
-namespace CommonApi.Regres.ResponseDto
+namespace CommonApi.Reqres.ResponseDto
 {
     public class User
     {
@@ -14,5 +15,7 @@ namespace CommonApi.Regres.ResponseDto
         public string LastName { get; set; }
         [JsonProperty("avatar")]
         public string Avatar { get; set; }
+        [JsonProperty("data")]
+        public List<User> Users { get; set; }
     }
 }
