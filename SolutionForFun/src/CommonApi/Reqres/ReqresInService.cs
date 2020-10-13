@@ -20,12 +20,12 @@ namespace CommonApi.Reqres
             return base.Get<UserListResponse>("users?page=2");
         }
 
-        public TimedRestResponse<UserListResponse> GetDelayedUsers(int delay)
+        public TimedRestResponse<UserListResponse> GetTimedDelayedUsers(int delay)
         {
-            return base.Get2<UserListResponse>($"users?delay={delay}");
+            return base.GetTimedResponse<UserListResponse>($"users?delay={delay}");
         }
 
-        public IRestResponse<UserListResponse> GetDelayedUsers2(int delay)
+        public IRestResponse<UserListResponse> GetDelayedUsers(int delay)
         {
             return base.GetAsync<UserListResponse>($"users?delay={delay}").Result;
         }

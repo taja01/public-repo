@@ -26,7 +26,7 @@ namespace CommonApi
             return await client.ExecuteAsync<TResponseDto>(request);
         }
 
-        public TimedRestResponse<TResponseDto> Get2<TResponseDto>(string urlParameters)
+        public TimedRestResponse<TResponseDto> GetTimedResponse<TResponseDto>(string urlParameters)
         {
             request = new RestRequest(urlParameters, Method.GET);
             var stopwatch = Stopwatch.StartNew();
