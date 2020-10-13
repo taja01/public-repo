@@ -6,3 +6,4 @@
 **/workspace.xml
 *.class
 /Java/TestApi/lib/
+**[a-zA-z]*.feature.cs
