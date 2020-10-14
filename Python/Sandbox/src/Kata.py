@@ -45,3 +45,7 @@ One of them is the IPv4 address.
 def isIPv4Address(s):
     array = s.split('.')
     return len(array) == 4 and all(x.isdigit() and 0 <= int(x) < 256  for x in array)
+
+#Check if all digits of the given integer are even.
+def evenDigitsOnly(n):
+    return all(int(x) % 2 == 0 for x in str(n))

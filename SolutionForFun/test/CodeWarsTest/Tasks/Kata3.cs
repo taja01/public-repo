@@ -162,5 +162,11 @@ namespace CodeWarsTests.Tasks
         {
             return inputArray.Select(_ => _ == elemToReplace ? substitutionElem : _).ToArray();
         }
+
+        //Check if all digits of the given integer are even.
+        public static bool EvenDigitsOnly(int n)
+        {
+            return n.ToString().All(_ => _ % 2 < 1);
+        }
     }
 }

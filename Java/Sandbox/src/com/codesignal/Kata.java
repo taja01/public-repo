@@ -19,4 +19,9 @@ public class Kata {
         }
         return max;
    }
+
+    //Check if all digits of the given integer are even.
+    public static boolean evenDigitsOnly(int n) {
+        return Integer.toString(n).matches("(0|2|4|6|8)*");
+    }
 }
