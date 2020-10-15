@@ -168,5 +168,13 @@ namespace CodeWarsTests.Tasks
         {
             return n.ToString().All(_ => _ % 2 < 1);
         }
+
+        //Correct variable names consist only of English letters, digits and underscores and they can't start with a digit.
+        public static bool VariableName(string name)
+        {
+            return Regex.IsMatch(name, @"^[a-zA-Z_][a-zA-Z0-9_]*$");
+            //return !char.IsDigit(name[0]) && name.All(c => char.IsLetterOrDigit(c) || c == '_');
+        }
+
     }
 }

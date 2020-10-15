@@ -24,4 +24,9 @@ public class Kata {
     public static boolean evenDigitsOnly(int n) {
         return Integer.toString(n).matches("(0|2|4|6|8)*");
     }
+
+    public static  boolean variableName(String name) {
+       return name.matches("[a-zA-Z_][a-zA-Z0-9_]*");
+    }
+
 }

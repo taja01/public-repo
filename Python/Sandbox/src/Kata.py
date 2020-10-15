@@ -49,3 +49,7 @@ def isIPv4Address(s):
 #Check if all digits of the given integer are even.
 def evenDigitsOnly(n):
     return all(int(x) % 2 == 0 for x in str(n))
+
+#Correct variable names consist only of English letters, digits and underscores and they can't start with a digit.
+def variableName(name):
+    return name.isidentifier()
