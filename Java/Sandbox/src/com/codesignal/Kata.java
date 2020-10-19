@@ -25,8 +25,22 @@ public class Kata {
         return Integer.toString(n).matches("(0|2|4|6|8)*");
     }
 
+    //Correct variable names consist only of English letters, digits and underscores and they can't start with a digit.
     public static  boolean variableName(String name) {
        return name.matches("[a-zA-Z_][a-zA-Z0-9_]*");
+    }
+
+    //Given a string, your task is to replace each of its characters by the next one in the English alphabet
+    //i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+    public static String alphabeticShift(String inputString) {
+        char[] c_array = inputString.toCharArray();
+        for (int i = 0; i < c_array.length; i++){
+            ++c_array[i];
+            if (c_array[i] == '{') {
+                c_array[i] = 'a';
+            }
+        }
+        return new String(c_array);
     }
 
 }

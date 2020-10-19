@@ -53,3 +53,8 @@ def evenDigitsOnly(n):
 #Correct variable names consist only of English letters, digits and underscores and they can't start with a digit.
 def variableName(name):
     return name.isidentifier()
+
+#Given a string, your task is to replace each of its characters by the next one in the English alphabet
+#i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+def alphabeticShift(inputString):
+    return ''.join((chr(ord(c)+1) if c!='z' else 'a'  for c in inputString))

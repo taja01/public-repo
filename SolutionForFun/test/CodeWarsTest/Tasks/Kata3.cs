@@ -176,5 +176,12 @@ namespace CodeWarsTests.Tasks
             //return !char.IsDigit(name[0]) && name.All(c => char.IsLetterOrDigit(c) || c == '_');
         }
 
+        //Given a string, your task is to replace each of its characters by the next one in the English alphabet
+        //i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+        public static string AlphabeticShift(string inputString)
+        {
+            var c = inputString.Select(c => ++c > 'z' ? 'a' : c);
+            return new string(c.ToArray());
+        }
     }
 }
