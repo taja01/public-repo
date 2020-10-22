@@ -48,3 +48,15 @@ print("classes:")
 
 p1 = Person("Thomas", "PythonLearner")
 p1.printDetails()
+
+print('*'* 10)
+
+print(ord('a')) #97
+print(ord('1')) #49
+
+cell1 = "A1"
+a = (ord(cell1[0]) + ord(cell1[1]))
+print(a)
+
+from Kata import chessBoardCellColor
+print(chessBoardCellColor("A1", "A3"))

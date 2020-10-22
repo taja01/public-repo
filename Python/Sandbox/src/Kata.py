@@ -58,3 +58,6 @@ def variableName(name):
 #i.e. replace a with b, replace b with c, etc (z would be replaced by a).
 def alphabeticShift(inputString):
     return ''.join((chr(ord(c)+1) if c!='z' else 'a'  for c in inputString))
+
+def chessBoardCellColor(cell1, cell2):
+    return (ord(cell1[0]) + ord(cell1[1])) % 2 == (ord(cell2[0]) + ord(cell2[1])) % 2

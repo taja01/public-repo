@@ -43,4 +43,13 @@ public class Kata {
         return new String(c_array);
     }
 
+    //Given two cells on the standard chess board, determine whether they have the same color or not.
+    //For cell1 = "A1" and cell2 = "C3", the output should be chessBoardCellColor(cell1, cell2) = true.
+    public static Boolean chessBoardCellColor(String cell1, String cell2) {
+       var c1 = cell1.toCharArray();
+       var c2 = cell2.toCharArray();
+
+       return (c1[0]+c1[1]) % 2 == (c2[0]+c2[1]) % 2;
+    }
+
 }

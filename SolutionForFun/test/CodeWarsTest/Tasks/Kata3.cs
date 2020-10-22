@@ -183,5 +183,13 @@ namespace CodeWarsTests.Tasks
             var c = inputString.Select(c => ++c > 'z' ? 'a' : c);
             return new string(c.ToArray());
         }
+
+        //Given two cells on the standard chess board, determine whether they have the same color or not.
+        //For cell1 = "A1" and cell2 = "C3", the output should be chessBoardCellColor(cell1, cell2) = true.
+        public static bool ChessBoardCellColor(string cell1, string cell2)
+        {
+            return (cell1[0] % 2 == 0 ^ cell1[1] % 2 == 0) == (cell2[0] % 2 == 0 ^ cell2[1] % 2 == 0);
+        }
+
     }
 }
