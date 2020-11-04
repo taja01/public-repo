@@ -60,3 +60,15 @@ print(a)
 
 from Kata import chessBoardCellColor
 print(chessBoardCellColor("A1", "A3"))
+
+a = [1,2,3]
+print(a)
+print(len(a))
+print(a[1])
+
+l = len(a)
+
+print(a[l - 1])
+
+print(l / 2)
+print(int(l / 2))
