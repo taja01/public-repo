@@ -1,5 +1,8 @@
 package com.codesignal;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class Kata {
     /*
      * Call two arms equally strong if the heaviest weights they each are able to lift are equal.
@@ -84,6 +87,15 @@ public class Kata {
      * abs(a[0] - x) + abs(a[1] - x) + ... + abs(a[a.length - 1] - x)
      */
     public static int absoluteValuesSumMinimization(int[] a) {
+
         return a[(a.length - 1) / 2];
     }
+
+    public static int[] extractEachKth(int[] inputArray, int k) {
+       return IntStream.range(0, inputArray.length)
+               .filter(i -> (i+1) % k != 0)
+               .map(i -> inputArray[i])
+               .toArray();
+    }
+
 }

@@ -88,3 +88,7 @@ def depositProfit(deposit, rate, threshold):
 # abs(a[0] - x) + abs(a[1] - x) + ... + abs(a[a.length - 1] - x) 
 def absoluteValuesSumMinimization(a):
     return a[int((len(a) - 1) / 2)]
+
+#Given array of integers, remove each kth element from it.
+def extractEachKth(inputArray, k):
+    return [i for (e, i) in enumerate(inputArray) if (e+1) % k]

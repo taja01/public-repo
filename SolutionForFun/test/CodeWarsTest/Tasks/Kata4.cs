@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace CodeWarsTests.Tasks
 {
@@ -41,5 +42,12 @@ namespace CodeWarsTests.Tasks
             return a[(a.Length - 1) / 2];
         }
 
+        //Given array of integers, remove each kth element from it.
+        public static int[] ExtractEachKth(int[] inputArray, int k)
+        {
+            return inputArray
+                .Where((e, index) => (index + 1) % k != 0)
+                .ToArray();
+        }
     }
 }
