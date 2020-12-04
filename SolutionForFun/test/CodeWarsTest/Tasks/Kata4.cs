@@ -49,5 +49,14 @@ namespace CodeWarsTests.Tasks
                 .Where((e, index) => (index + 1) % k != 0)
                 .ToArray();
         }
+
+        // Find the leftmost digit that occurs in a given string.
+        // [execution time limit] 3 seconds(cs)
+
+        public static char FirstDigit(string inputString)
+        {
+            return inputString.First(char.IsDigit);
+        }
+
     }
 }

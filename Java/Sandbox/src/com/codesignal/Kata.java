@@ -98,4 +98,13 @@ public class Kata {
                .toArray();
     }
 
+    public static char firstDigit(String inputString) {
+        for (char c: inputString.toCharArray()) {
+            if (Character.isDigit(c)) {
+                return c;
+            }
+        }
+        return 0;
+    }
+
 }

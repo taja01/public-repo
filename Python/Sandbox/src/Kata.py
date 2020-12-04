@@ -92,3 +92,9 @@ def absoluteValuesSumMinimization(a):
 #Given array of integers, remove each kth element from it.
 def extractEachKth(inputArray, k):
     return [i for (e, i) in enumerate(inputArray) if (e+1) % k]
+
+#Find the leftmost digit that occurs in a given string.
+def firstDigit(inputString):
+    for i in inputString:
+        if i.isdigit():
+            return i
