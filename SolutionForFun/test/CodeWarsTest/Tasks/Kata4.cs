@@ -58,5 +58,31 @@ namespace CodeWarsTests.Tasks
             return inputString.First(char.IsDigit);
         }
 
+        /*
+         * Some phone usage rate may be described as follows:
+         * first minute of a call costs min1 cents,
+         * each minute from the 2nd up to 10th (inclusive) costs min2_10 cents
+         * each minute after 10th costs min11 cents.
+         * 
+         * You have s cents on your account before the call.
+         * What is the duration of the longest call (in minutes rounded down to the nearest integer) you can have?
+         */
+        public static int PhoneCall(int min1, int min2_10, int min11, int s)
+        {
+            if (s < min1)
+            {
+                return 0;
+            }
+            s -= min1;
+
+            var min2_10_s = s / min2_10;
+            if (min2_10_s <= 9)
+            {
+                return 1 + min2_10_s;
+            }
+            s -= min2_10 * 9;
+
+            return s / min11 + 10;
+        }
     }
 }
