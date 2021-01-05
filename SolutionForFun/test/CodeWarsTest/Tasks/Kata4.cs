@@ -84,5 +84,32 @@ namespace CodeWarsTests.Tasks
 
             return s / min11 + 10;
         }
+        /*
+         * You are playing an RPG game. Currently your experience points (XP) total is equal to experience.
+         * To reach the next level your XP should be at least at threshold.
+         * If you kill the monster in front of you, you will gain more experience points in the amount of the reward.
+         * Given values experience, threshold and reward, check if you reach the next level after killing the monster.
+         */
+        public static bool ReachNextLevel(int experience, int threshold, int reward)
+        {
+            return experience + reward >= threshold;
+        }
+
+        /*
+         * You found two items in a treasure chest! 
+         * The first item weighs weight1 and is worth value1, and the second item weighs weight2 and is worth value2.
+         * What is the total maximum value of the items you can take with you, assuming that your max weight capacity is maxW and you can't come back for the items later?
+         * 
+         * Note that there are only two items and you can't bring more than one item of each type, i.e. you can't take two first items or two second items.
+         */
+        public static int KknapsackLight(int value1, int weight1, int value2, int weight2, int maxW)
+        {
+            return weight1 > maxW && weight2 > maxW
+                ? 0
+                : weight1 + weight2 <= maxW
+                ? value1 + value2
+                : value1 > value2 ? weight1 <= maxW ? value1 : value2 : weight2 <= maxW ? value2 : value1;
+        }
+
     }
 }
