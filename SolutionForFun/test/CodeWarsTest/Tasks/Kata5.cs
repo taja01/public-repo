@@ -39,5 +39,35 @@
             return a + b == c || a - b == c || a * b == c || b * c == a;
         }
 
+        /// <summary>
+        /// Interview task, return second int.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static int SecondMaxInteger(int[] array)
+        {
+            if (array == null)
+            {
+                throw new System.Exception("Array cannot be null");
+            }
+
+            if (array.Length < 2)
+            {
+                throw new System.Exception("Array length should be more than 1");
+            }
+
+            int max = int.MinValue;
+            int secondMax = int.MinValue;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                {
+                    secondMax = max;
+                    max = array[i];
+                }
+            }
+            return secondMax;
+        }
     }
 }
