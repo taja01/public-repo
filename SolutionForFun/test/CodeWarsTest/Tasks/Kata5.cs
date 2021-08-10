@@ -80,5 +80,15 @@ namespace CodeWarsTests.Tasks
         {
             return str.ToCharArray().GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
         }
+
+        //Given an array of integers, find the one that appears an odd number of times.
+        //There will always be only one integer that appears an odd number of times.
+        public static int FindIt(int[] seq)
+        {
+            return seq
+                .GroupBy(x => x)
+                .Where(i => i.Count() % 2 == 1)
+                .Single().Key;
+        }
     }
 }
