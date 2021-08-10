@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Net;
 
-namespace ApiTests.OtTest
+namespace ApiTests.OtpTest
 {
     [TestFixture]
     public class CarSweepTest
