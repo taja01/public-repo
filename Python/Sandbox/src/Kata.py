@@ -125,3 +125,13 @@ from collections import Counter
 
 def count(string):
     return Counter(string)
+
+
+# Return sum of numbers where where divided of 7
+def sumOfDividedOfSeven(array):
+    sum = 0
+    for i in array:
+        if i % 7 == 0:
+            sum += i
+
+    return sum
