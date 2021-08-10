@@ -90,5 +90,26 @@ namespace CodeWarsTests.Tasks
                 .Where(i => i.Count() % 2 == 1)
                 .Single().Key;
         }
+
+        //In this kata you have to create all permutations of an input string and remove duplicates, if present.
+        //This means, you have to shuffle all letters from the input in all possible orders.
+        public static List<string> SinglePermutations(string s)
+        {
+            if (s.Length < 2)
+            {
+                return new List<string> { s };
+            }
+
+            var result = new HashSet<string>();
+            foreach (var sub in SinglePermutations(s.Substring(1)))
+            {
+                for (int i = 0; i <= sub.Length; i++)
+                {
+                    var r = sub.Substring(0, i) + s[0] + sub.Substring(i);
+                    result.Add(r);
+                }
+            }
+            return result.ToList();
+        }
     }
 }
