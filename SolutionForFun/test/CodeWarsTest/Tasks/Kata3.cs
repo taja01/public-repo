@@ -76,23 +76,27 @@ namespace CodeWarsTests.Tasks
             //return System.Net.IPAddress.TryParse(inputString, out _);
 
             //1
-            if (Regex.IsMatch(inputString, @"^(([0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-5][0-9])\.){3}([0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-5][0-9])$"))
-            {
-                var array = inputString.Split('.');
+            //if (Regex.IsMatch(inputString, @"^(([0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-5][0-9])\.){3}([0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-5][0-9])$"))
+            //{
+            //    var array = inputString.Split('.');
 
-                foreach (var item in array)
-                {
-                    if (int.TryParse(item, out var result))
-                    {
-                        if (result > 255)
-                            return false;
-                    }
-                }
+            //    foreach (var item in array)
+            //    {
+            //        if (int.TryParse(item, out var result))
+            //        {
+            //            if (result > 255)
+            //                return false;
+            //        }
+            //    }
 
-                return true;
-            }
+            //    return true;
+            //}
 
-            return false;
+            //return false;
+
+            //3
+
+            return inputString.Split(".").Length == 4 && System.Net.IPAddress.TryParse(inputString, out _);
         }
 
         // take the first element from an array, then the last, then the second, then the last but one in an alternating way.

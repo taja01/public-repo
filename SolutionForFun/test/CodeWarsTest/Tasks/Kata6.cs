@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.Tasks
 {
@@ -115,6 +116,139 @@ namespace CodeWarsTests.Tasks
         public static string NoSpace(string input)
         {
             return input.Replace(" ", string.Empty);
+        }
+
+        //Given an array of integers your solution should find the smallest integer.
+        public static int FindSmallestInt(int[] args)
+        {
+            //return args.OrderBy(x => x).First();
+            return args.Min();
+        }
+
+        //We need a function that can transform a number into a string.
+        public static string NumberToString(int num)
+        {
+            return num.ToString();
+        }
+
+        //Consider an array/list of sheep where some sheep may be missing from their place.
+        //We need a function that counts the number of sheep present in the array (true means present).
+        public static int CountSheeps(bool[] sheeps)
+        {
+            return sheeps.Count(x => x);
+        }
+
+        /*
+         * It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
+         * Build a function that takes in two arguments (salary, bonus). Salary will be an integer, and bonus a boolean.
+         * If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+         */
+        public static string BonusTime(int salary, bool bonus)
+        {
+            return $"${salary * (bonus ? 10 : 1)}";
+        }
+
+        /*
+         * Nathan loves cycling.
+         * Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+         * You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+         */
+        public static int Litres(double time)
+        {
+            return (int)(time / 2);
+        }
+
+        /*
+         * An NBA game runs 48 minutes (Four 12 minute quarters). Players do not typically play the full game, subbing in and out as necessary. 
+         * Your job is to extrapolate a player's points per game if they played the full 48 minutes.
+         * Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
+         */
+        public static double NbaExtrap(double ppg, double mpg)
+        {
+            return ppg == 0 ? 0 : Math.Round(ppg / mpg * 48, 1);
+        }
+
+        //Remove a exclamation mark from the end of string.
+        //For a beginner kata, you can assume that the input data is always a string, no need to verify it.
+        public static string Remove(string s)
+        {
+            return s.EndsWith("!") ? s.Substring(0, s.Length - 1) : s;
+            //return s.EndsWith("!") ? s[0..^1] : s;
+        }
+
+        /*
+         * Given two integer arrays a, b, both of length >= 1, create a program that 
+         * returns true if the sum of the squares of each element in a is strictly greater than the sum of the cubes of each element in b.
+         */
+        public static bool ArrayMadness(int[] a, int[] b)
+        {
+            var aa = a.Select(x => x * x).Sum();
+            var bb = b.Select(x => x * x * x).Sum();
+
+            return aa > bb;
+        }
+
+        //Take an array and remove every second element from the array.
+        //Always keep the first element and start removing with the next element.
+        public static object[] RemoveEveryOther(object[] arr)
+        {
+            return arr.Where((x, y) => y % 2 == 0).ToArray();
+        }
+
+        //Basic regex tasks. Write a function that takes in a numeric code of any length.
+        //The function should check if the code begins with 1, 2, or 3 and return
+        public static bool ValidateCode(string code)
+        {
+            var pattern = "^[1-3]";
+            return Regex.IsMatch(code, pattern);
+        }
+
+        //Create a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.
+        public static bool Include(int[] arr, int item)
+        {
+            return arr.Contains(item);
+        }
+
+        /*
+         * Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
+         * When documents (especially pretty old ones written with a typewriter), are digitised character recognition softwares often make mistakes.
+         * Your task is correct the errors in the digitised text. You only have to handle the following mistakes:
+         * S is misinterpreted as 5
+         * O is misinterpreted as 0
+         * I is misinterpreted as 1
+         * The test cases contain numbers only by mistake.
+         */
+        public static string Correct(string text)
+        {
+            return text
+                .Replace("0", "O")
+                .Replace("1", "I")
+                .Replace("5", "S");
+        }
+
+        public static double basicOp(char operation, double value1, double value2)
+        {
+            return operation switch
+            {
+                '+' => value1 + value2,
+                '-' => value1 - value2,
+                '*' => value1 * value2,
+                '/' => value1 / value2,
+                _ => throw new NotImplementedException(),
+            };
+        }
+
+        /*
+         * In this example you have to validate if a user input string is alphanumeric. The given string is not nil/null/NULL/None, so you don't have to check that.
+         * The string has the following conditions to be alphanumeric:
+         * At least one character ("" is not valid)
+         * Allowed characters are uppercase / lowercase latin letters and digits from 0 to 9
+         * No whitespaces / underscore
+         */
+        public static bool Alphanumeric(string str)
+        {
+
+            return !string.IsNullOrEmpty(str) && str.All(c => char.IsLetterOrDigit(c));
         }
     }
 }
