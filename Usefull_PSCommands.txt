@@ -1,0 +1,33 @@
+$chrome = (Get-Item (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe').'(Default)').VersionInfo.FileVersion
+$edge = Get-AppxPackage -Name Microsoft.MicrosoftEdge | Foreach Version
+Write-Host $chrome
+Write-Host $edge
+
+$os = Get-ComputerInfo -Property "osname*"
+Write-Host $os
+
+Kill Chrome
+$counter = (Get-Process | Where-Object {$_.Name -eq 'chromedriver'}).count
+
+if ( $counter -eq 0 )
+{
+    Write-Output "All chrome drivers closed correctly"
+}
+else
+{
+    Write-Host Number of chromedriver stuck: $counter
+    Get-Process chromedriver | Stop-Process
+}
+
+Kill FF
+$counter = (Get-Process | Where-Object {$_.Name -eq 'geckodriver'}).count
+
+if ( $counter -eq 0 )
+{
+    Write-Output "All firefox drivers closed correctly"
+}
+else
+{
+    Write-Host Number of geckodriver stuck: $counter
+    Get-Process geckodriver | Stop-Process
+}
