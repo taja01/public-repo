@@ -12,5 +12,6 @@ namespace CodeWarsTests.Tasks
 
             return Regex.Replace(input, "[aiuoe]", "");
         }
+
     }
 }
