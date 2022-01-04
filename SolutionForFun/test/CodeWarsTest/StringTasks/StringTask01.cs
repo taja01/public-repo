@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.StringTasks
@@ -90,6 +91,67 @@ namespace CodeWarsTests.StringTasks
         public static int GetNumberFromString(string s)
         {
             return int.Parse(Regex.Replace(s, "(\\D)+", string.Empty));
+        }
+
+        /*
+         * https://www.codewars.com/kata/57cc975ed542d3148f00015b
+         * You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+         * Array can contain numbers or strings. X can be either.
+         * Return true if the array contains the value, false if not.
+         */
+        public static bool Check(object[] a, object x)
+        {
+            return a.Contains(x);
+        }
+
+        /*
+         * https://www.codewars.com/kata/57f222ce69e09c3630000212
+         * For every good kata idea there seem to be quite a few bad ones!
+         * In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'.
+         * If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. 
+         * If there are no good ideas, as is often the case, return 'Fail!'.
+         */
+        public static string Well(string[] x)
+        {
+            var numberOfGoodIdeas = x.Count(x => x == "good");
+
+            if (numberOfGoodIdeas == 0)
+            {
+                return "Fail!";
+            }
+            else if (numberOfGoodIdeas < 3)
+            {
+                return "Publish!";
+            }
+            else
+            {
+                return "I smell a series!";
+            }
+        }
+
+        /*
+         * https://www.codewars.com/kata/5709bdd2f088096786000008
+         * Write a function that rearranges an integer into its largest possible value.
+         */
+        public static long SuperSize(long num)
+        {
+            return long.Parse(num.ToString().OrderByDescending(x => x).ToArray());
+        }
+
+        /*
+         * https://www.codewars.com/kata/55902c5eaa8069a5b4000083
+         * The company you work for has just been awarded a contract to build a payment gateway. 
+         * In order to help move things along, you have volunteered to create a function that will take a float and return
+         * the amount formatting in dollars and cents.
+         * 39.99 becomes $39.99
+         * The rest of your team will make sure that the argument is sanitized before being passed to your function although 
+         * you will need to account for adding trailing zeros if they are missing (though you won't have to worry about a dangling period).
+         */
+        public static string FormatMoney(double amount)
+        {
+            // $"${amount:F2}";
+            // amount.ToString("$0.00");
+            return amount.ToString("C", new CultureInfo("us-US"));
         }
     }
 }
