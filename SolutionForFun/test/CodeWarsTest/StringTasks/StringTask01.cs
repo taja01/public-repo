@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.StringTasks
 {
@@ -66,6 +67,29 @@ namespace CodeWarsTests.StringTasks
         public static string Smash(string[] words)
         {
             return string.Join(" ", words);
+        }
+
+        /*
+         * https://www.codewars.com/kata/596fba44963025c878000039
+         * An AI has infected a text with a character!!
+         * This text is now fully mutated to this character.
+         * If the text or the character are empty, return an empty string.
+         * There will never be a case when both are empty as nothing is going on!!
+         * Note: The character is a string of length 1 or an empty string.
+         */
+        public static string Contamination(string text, string character)
+        {
+            return string.Concat(Enumerable.Repeat(character, text.Length));
+        }
+
+        /*
+         * https://www.codewars.com/kata/57a37f3cbb99449513000cd8
+         * Write a function which removes from string all non-digit characters and parse the remaining to number. 
+         * E.g: "hell5o wor6ld" -> 56
+         */
+        public static int GetNumberFromString(string s)
+        {
+            return int.Parse(Regex.Replace(s, "(\\D)+", string.Empty));
         }
     }
 }
