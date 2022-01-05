@@ -153,5 +153,36 @@ namespace CodeWarsTests.StringTasks
             // amount.ToString("$0.00");
             return amount.ToString("C", new CultureInfo("us-US"));
         }
+
+        /*
+         * https://www.codewars.com/kata/57e1e61ba396b3727c000251
+         * Your boss decided to save money by purchasing some cut-rate optical character recognition software for scanning in the text of old novels to your database. 
+         * At first it seems to capture words okay, but you quickly notice that it throws in a lot of numbers at random places in the text. 
+         * For example:
+         * string_clean('! !') == '! !'
+         * string_clean('123456789') == ''
+         * string_clean('This looks5 grea8t!') == 'This looks great!'
+         */
+        public static string StringClean(string s)
+        {
+            return Regex.Replace(s, "(\\d)+", string.Empty);
+        }
+
+        /*
+         * https://www.codewars.com/kata/55a14f75ceda999ced000048
+         * Template Strings
+         * Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings
+         * Task
+         * Your task is to return the correct string using the Template String Feature.
+         * Input
+         * Two Strings, no validation is needed.
+         * Output
+         * You must output a string containing the two strings with the word ```' are '```
+         * Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings
+         */
+        public static string TempleStrings(string obj, string feature)
+        {
+            return $"{obj} are {feature}";
+        }
     }
 }
