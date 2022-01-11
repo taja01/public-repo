@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeWarsTests.StringTasks
 {
@@ -80,6 +81,23 @@ namespace CodeWarsTests.StringTasks
         public static string SayHello(string[] name, string city, string state)
         {
             return $"Hello, {string.Join(" ", name)}! Welcome to {city}, {state}!";
+        }
+
+        /*
+         * https://www.codewars.com/kata/548ef5b7f33a646ea50000b2
+         * Welcome, Warrior! In this kata, you will get a message and you will need to get the frequency of each and every character!
+         * Your function will be called char_freq/charFreq/CharFreq and you will get passed a string, you will then return a dictionary (object in JavaScript) with as keys the characters, and as values how many times that character is in the string. 
+         * You can assume you will be given valid input.
+         */
+        public static Dictionary<char, int> CharFreq(string message)
+        {
+            //return message.GroupBy(x => x)
+            //    .Select(x => new
+            //    {
+            //        Key = x.Key,
+            //        Count = x.Count()
+            //    }).ToDictionary(x => x.Key, x => x.Count);
+            return message.GroupBy(c => c).ToDictionary(x => x.Key, x => x.Count());
         }
     }
 }
