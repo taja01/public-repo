@@ -112,5 +112,15 @@ namespace CodeWarsTests.StringTasks
         {
             return toRepeat is string ? string.Concat(Enumerable.Repeat(toRepeat, n)) : "Not a string";
         }
+
+        /*
+         * https://www.codewars.com/kata/559ac78160f0be07c200005a
+         * Write a function that returns a string in which firstname is swapped with last name.
+         * Kata.NameShuffler("john McClane") => "McClane john"
+         */
+        public static string NameShuffler(string str)
+        {
+            return string.Join(' ', str.Split(' ').Reverse());
+        }
     }
 }
