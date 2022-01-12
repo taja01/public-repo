@@ -86,8 +86,12 @@ namespace ApiTests.ReqresTest
         {
             var response = await service.GetTimedDelayedUsers(6); //intentional
             Assert.That(response.Response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
-            Assert.That(response.Response.Data.Users.Count, Is.GreaterThan(1));
-            Assert.That(response.Duration.TotalSeconds, Is.GreaterThan(5), "Long execute");
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(response.Response.Data.Users.Count, Is.GreaterThan(1));
+                Assert.That(response.Duration.TotalSeconds, Is.GreaterThan(5), "Long execute");
+            });
         }
     }
 }

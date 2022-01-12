@@ -38,8 +38,12 @@ namespace ApiTests.OtpTest
             var response = await service.GetCarsweepstake("0");
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode, "Status code");
-            Assert.AreEqual("0", response.Data.Number, "Number");
-            CollectionAssert.IsEmpty(response.Data.Sweepstakes, "sweepstakes is empty");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual("0", response.Data.Number, "Number");
+                CollectionAssert.IsEmpty(response.Data.Sweepstakes, "sweepstakes is empty");
+            });
         }
     }
 }
