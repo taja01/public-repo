@@ -72,5 +72,33 @@ namespace CodeWarsTests.StringTasks
                 ? new string('-', water * water) + seed
                 : string.Concat(Enumerable.Repeat(new string('-', water) + new string(seed, fert), water));
         }
+
+        /*
+         * https://www.codewars.com/kata/605ae9e1d2be8a0023b494ed
+         * There is a narrow hallway in which people can go right and left only. 
+         * When two people meet in the hallway, by tradition they must salute each other. People move at the same speed left and right.
+         * Your task is to write a function that, given a string representation of people moving in the hallway, will count the number of salutes that will occur.
+         * Note: 2 salutes occur when people meet, one to the other and vice versa.
+         * Input: <---<--->----<
+         * Output: 2
+         * 
+         * Input: >----->-----<--<
+         * Output: 8
+         */
+        public static int CountSalutes(string hallway)
+        {
+            var counter = 0;
+            var text = hallway.Replace("-", string.Empty);
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == '<')
+                {
+                    continue;
+                }
+                counter += text.Substring(i).Count(c => c == '<');
+            }
+
+            return counter * 2;
+        }
     }
 }
