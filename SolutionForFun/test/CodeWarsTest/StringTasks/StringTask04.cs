@@ -100,5 +100,30 @@ namespace CodeWarsTests.StringTasks
 
             return counter * 2;
         }
+
+        /*
+         * https://www.codewars.com/kata/5e2596a9ad937f002e510435
+         * ⚠️ The world is in quarantine! There is a new pandemia that struggles mankind.
+         * Each continent is isolated from each other but infected people have spread before the warning. ⚠️
+         * 🗺️ You would be given a map of the world in a type of string:
+         * string s = "01000000X000X011X0X"
+         * '0' : uninfected
+         * '1' : infected
+         * 'X' : ocean
+         * Example:
+         * start: map1 = "01000000X000X011X0X"
+         * end:   map1 = "11111111X000X111X0X"
+         * total = 15
+         * infected = 11
+         * percentage = 100*11/15 = 73.33333333333333
+         */
+        public static double Infected(string s)
+        {
+            var cases = s.Split('X').Where(x => x.Contains('1')).Sum(x => x.Length);
+
+            return cases == 0
+                ? 0
+                : 100 * (double)cases / s.Count(char.IsNumber);
+        }
     }
 }
