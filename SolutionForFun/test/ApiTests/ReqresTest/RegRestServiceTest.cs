@@ -9,12 +9,12 @@ namespace ApiTests.ReqresTest
     [Parallelizable(ParallelScope.All)]
     public class RegrestServiceTest
     {
-        private ReqresInService service;
+        private ReqresInServiceClient service;
 
         [OneTimeSetUp]
         public void Setup()
         {
-            service = new ReqresInService();
+            service = new ReqresInServiceClient();
         }
 
         [Test]
@@ -79,19 +79,6 @@ namespace ApiTests.ReqresTest
             var response = await service.GetDelayedUsers(6); //intentional
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(response.Data.Users.Count, Is.GreaterThan(1));
-        }
-
-        [Test]
-        public async Task Test4_66()
-        {
-            var response = await service.GetTimedDelayedUsers(6); //intentional
-            Assert.That(response.Response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(response.Response.Data.Users.Count, Is.GreaterThan(1));
-                Assert.That(response.Duration.TotalSeconds, Is.GreaterThan(5), "Long execute");
-            });
         }
     }
 }

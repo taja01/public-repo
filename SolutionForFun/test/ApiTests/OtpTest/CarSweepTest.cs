@@ -8,12 +8,12 @@ namespace ApiTests.OtpTest
     [TestFixture]
     public class CarSweepTest
     {
-        OtpBankCarPrizeDeposit service;
+        OtpBankCarPrizeDepositClient service;
 
         [OneTimeSetUp]
         public void Setup()
         {
-            service = new OtpBankCarPrizeDeposit();
+            service = new OtpBankCarPrizeDepositClient();
         }
 
         [Test]
