@@ -1,6 +1,7 @@
 ﻿using CommonApi.Otp;
 using NUnit.Framework;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace ApiTests.OtpTest
 {
@@ -16,21 +17,25 @@ namespace ApiTests.OtpTest
         }
 
         [Test]
-        public void Winner()
+        public async Task Winner()
         {
-            var response = service.GetCarsweepstake("601410154");
+            var response = await service.GetCarsweepstake("602214339 ");
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode, "Status code");
-            Assert.AreEqual("601410154", response.Data.Number, "Number");
-            CollectionAssert.IsNotEmpty(response.Data.Sweepstakes, "sweepstakes is empty");
-            Assert.AreEqual("2020-09-15", response.Data.Sweepstakes[0].LotDate, "LotDate");
-            Assert.AreEqual("Toyota Aygo 1,0 X-Comfort 5 ajtós", response.Data.Sweepstakes[0].CarType, "LotDate");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual("602214339", response.Data.Number, "Number");
+                CollectionAssert.IsNotEmpty(response.Data.Sweepstakes, "sweepstakes is empty");
+                Assert.AreEqual("2021-12-15", response.Data.Sweepstakes[0].LotDate, "LotDate");
+                Assert.AreEqual("Toyota Yaris 1.0 Active 5 ajtós", response.Data.Sweepstakes[0].CarType, "LotDate");
+            });
         }
 
         [Test]
-        public void NotWinner()
+        public async Task NotWinner()
         {
-            var response = service.GetCarsweepstake("0");
+            var response = await service.GetCarsweepstake("0");
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode, "Status code");
             Assert.AreEqual("0", response.Data.Number, "Number");

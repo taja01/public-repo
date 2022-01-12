@@ -1,16 +1,13 @@
-﻿using Newtonsoft.Json;
-using RestSharp.Deserializers;
+﻿using System.Text.Json.Serialization;
 
 namespace CommonApi.Reqres.ResponseDto
 {
     public class UserResponse
     {
-        [DeserializeAs(Name = "data")]
-        [JsonProperty("data")]
+        [JsonPropertyName("data")]
         public User User { get; set; }
 
-        [DeserializeAs(Name = "ad")]
-        [JsonProperty("ad")]
-        public WorkPlace WorkPlace { get; set; }
+        [JsonPropertyName("support")]
+        public Support Support { get; set; }
     }
 }

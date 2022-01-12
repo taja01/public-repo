@@ -1,5 +1,6 @@
 ﻿using CommonApi.Reqres.ResponseDto;
 using RestSharp;
+using System.Threading.Tasks;
 
 namespace CommonApi.Reqres
 {
@@ -9,25 +10,25 @@ namespace CommonApi.Reqres
         {
         }
 
-        public IRestResponse<UserResponse> GetUser(string userId)
+        public Task<RestResponse<UserResponse>> GetUser(string userId)
         {
-            return base.Get<UserResponse>($"users/{userId}");
+            return GetAsync<UserResponse>($"users/{userId}");
 
         }
 
-        public IRestResponse<UserListResponse> GetUserList()
+        public Task<RestResponse<UserListResponse>> GetUserList()
         {
-            return base.Get<UserListResponse>("users?page=2");
+            return GetAsync<UserListResponse>("users?page=2");
         }
 
-        public TimedRestResponse<UserListResponse> GetTimedDelayedUsers(int delay)
+        public Task<TimedRestResponse<UserListResponse>> GetTimedDelayedUsers(int delay)
         {
-            return base.GetTimedResponse<UserListResponse>($"users?delay={delay}");
+            return GetTimedResponse<UserListResponse>($"users?delay={delay}");
         }
 
-        public IRestResponse<UserListResponse> GetDelayedUsers(int delay)
+        public Task<RestResponse<UserListResponse>> GetDelayedUsers(int delay)
         {
-            return base.GetAsync<UserListResponse>($"users?delay={delay}").Result;
+            return GetAsync<UserListResponse>($"users?delay={delay}");
         }
     }
 }

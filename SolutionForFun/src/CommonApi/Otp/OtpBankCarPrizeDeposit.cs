@@ -1,5 +1,6 @@
 ﻿using CommonApi.Otp.ResponseDto;
 using RestSharp;
+using System.Threading.Tasks;
 
 namespace CommonApi.Otp
 {
@@ -9,9 +10,11 @@ namespace CommonApi.Otp
         {
         }
 
-        public IRestResponse<CarsWeepStakesResponse> GetCarsweepstake(string number)
+        public Task<RestResponse<CarsWeepStakesResponse>> GetCarsweepstake(string number)
         {
-            return base.Get<CarsWeepStakesResponse>($"carsweepstakes/check/{number}");
+            var header = new HeaderParameter("Accept", "application/json");
+
+            return GetAsync<CarsWeepStakesResponse>($"carsweepstakes/check/{number}", new[] { header });
         }
     }
 }

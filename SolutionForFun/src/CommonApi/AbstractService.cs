@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -11,26 +12,33 @@ namespace CommonApi
 
         protected AbstractService(string url)
         {
-            client = new RestClient(url);
+            var options = new RestClientOptions
+            {
+                BaseUrl = new System.Uri(url)
+            };
+
+            client = new RestClient(options);
         }
 
-        public IRestResponse<TResponseDto> Get<TResponseDto>(string urlParameters)
+        public async Task<RestResponse<TResponseDto>> GetAsync<TResponseDto>(string urlParameters, IList<HeaderParameter> headers = null)
         {
-            request = new RestRequest(urlParameters, Method.GET);
-            return client.Execute<TResponseDto>(request);
-        }
+            request = new RestRequest(urlParameters, Method.Get);
 
-        public async Task<IRestResponse<TResponseDto>> GetAsync<TResponseDto>(string urlParameters)
-        {
-            request = new RestRequest(urlParameters, Method.GET);
+            if (headers != null)
+            {
+                foreach (var header in headers)
+                {
+                    request.AddHeader(header.Name, header.Value.ToString());
+                }
+            }
+
             return await client.ExecuteAsync<TResponseDto>(request);
         }
 
-        public TimedRestResponse<TResponseDto> GetTimedResponse<TResponseDto>(string urlParameters)
+        public async Task<TimedRestResponse<TResponseDto>> GetTimedResponse<TResponseDto>(string urlParameters, IList<HeaderParameter> headers = null)
         {
-            request = new RestRequest(urlParameters, Method.GET);
             var stopwatch = Stopwatch.StartNew();
-            var response = client.Execute<TResponseDto>(request);
+            var response = await this.GetAsync<TResponseDto>(urlParameters);
             stopwatch.Stop();
             return new TimedRestResponse<TResponseDto>() { Duration = stopwatch.Elapsed, Response = response };
         }
