@@ -48,5 +48,29 @@ namespace CodeWarsTests.StringTasks
         {
             return string.Join(' ', text.Split(' ').Reverse());
         }
+
+        /*
+         * https://www.codewars.com/kata/606efc6a9409580033837dfb
+         * You have cultivated a plant, and after months of hard work, the time has come to reap the flowers of your hard work. 
+         * When it was growing, you added water and fertilizer, and kept a constant temperature. It's time check how much your plant has grown.
+         * A plant is represented horizontally, from the base to the left, to the end to the right:
+         * ---@---@---@
+         */
+        public static string Plant(char seed, int water, int fert, int temp)
+        {
+            //if (temp < 20 || temp > 30)
+            //{
+            //    return $"{string.Concat(Enumerable.Repeat('-', water * water))}{seed}";
+            //}
+
+            //var w = string.Concat(Enumerable.Repeat('-', water));
+            //var p = string.Concat(Enumerable.Repeat(seed, fert));
+
+            //return string.Concat(Enumerable.Repeat($"{w}{p}", water));
+
+            return temp < 20 || temp > 30
+                ? new string('-', water * water) + seed
+                : string.Concat(Enumerable.Repeat(new string('-', water) + new string(seed, fert), water));
+        }
     }
 }
