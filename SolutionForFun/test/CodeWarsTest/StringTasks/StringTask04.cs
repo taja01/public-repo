@@ -143,5 +143,16 @@ namespace CodeWarsTests.StringTasks
         {
             return string.Concat(str.Select(x => char.ConvertFromUtf32(x / 6)));
         }
+
+        /*
+         * https://www.codewars.com/kata/554b4ac871d6813a03000035
+         * In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+         */
+        public static string HighAndLow(string numbers)
+        {
+            var a = numbers.Split(' ').Select(x => int.Parse(x));
+
+            return $"{a.Max()} {a.Min()}";
+        }
     }
 }
