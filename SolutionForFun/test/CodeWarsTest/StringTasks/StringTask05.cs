@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.StringTasks
 {
@@ -54,6 +55,16 @@ namespace CodeWarsTests.StringTasks
         public static string RemoveDuplicateWords(string s)
         {
             return string.Join(' ', s.Split(' ').Distinct());
+        }
+
+        /*
+         * https://www.codewars.com/kata/5b37a50642b27ebf2e000010
+         * Beaches are filled with sand, water, fish, and sun.
+         * Given a string, calculate how many times the words "Sand", "Water", "Fish", and "Sun" appear without overlapping (regardless of the case).
+         */
+        public static int SumOfABeach(string s)
+        {
+            return Regex.Matches(s, "(sand|fish|water|sun)", RegexOptions.IgnoreCase).Count;
         }
 
     }
