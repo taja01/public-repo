@@ -67,5 +67,18 @@ namespace CodeWarsTests.StringTasks
             return Regex.Matches(s, "(sand|fish|water|sun)", RegexOptions.IgnoreCase).Count;
         }
 
+        /*
+         * https://www.codewars.com/kata/5b358a1e228d316283001892
+         * You receive the name of a city as a string, and you need to return a string that shows how many times each letter shows up in the string by using asterisks (*).
+         * "Chicago"  -->  "c:**,h:*,i:*,a:*,g:*,o:*"
+         */
+        public static string GetStrings(string city)
+        {
+            return string.Join(',', city.ToLower()
+                .GroupBy(c => c)
+                .Where(c => char.IsLetter(c.Key))
+                .Select(x => $"{x.Key}:{new string('*', x.Count())}"));
+        }
+
     }
 }
