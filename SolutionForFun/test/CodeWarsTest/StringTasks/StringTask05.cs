@@ -80,5 +80,33 @@ namespace CodeWarsTests.StringTasks
                 .Select(x => $"{x.Key}:{new string('*', x.Count())}"));
         }
 
+        /*
+         * https://www.codewars.com/kata/5d076515e102162ac0dc514e
+         * Create a function, as short as possible, that returns this lyrics.
+         * Your code should be less than 300 characters. Watch out for the three points at the end of the song.
+         */
+        public static string BabySharkLyrics()
+        {
+            //var l = new List<string>();
+            //var f = new[] { "Baby", "Mommy", "Daddy", "Grandma", "Grandpa", "Let's go hunt" };
+
+            //for (int i = 0; i < f.Length; i++)
+            //{
+            //    for (int j = 0; j < 4; j++)
+            //    {
+            //        l.Add($"{f[i]}{(i < 5 ? " shark" : "")}{(j < 3 ? ", doo doo doo doo doo doo" : "!")}");
+            //    }
+            //}
+            //l.Add("Run away,…");
+            //l.Add("");
+
+            //return string.Join('\n', l);
+
+            return string.Concat(new[] { "Baby", "Mommy", "Daddy", "Grandma", "Grandpa" }
+            .Select(x => $"{x} shark")
+            .Append("Let's go hunt")
+            .Select(y => string.Join(", doo doo doo doo doo doo\n", Enumerable.Repeat(y, 4)) + "!\n")) + "Run away,…\n";
+        }
+
     }
 }
