@@ -108,5 +108,16 @@ namespace CodeWarsTests.StringTasks
             .Select(y => string.Join(", doo doo doo doo doo doo\n", Enumerable.Repeat(y, 4)) + "!\n")) + "Run away,…\n";
         }
 
+        /*
+         * https://www.codewars.com/kata/5acbc3b3481ebb23a400007d
+         * Determine if the poker hand is flush, meaning if the five cards are of the same suit.
+         * Your function will be passed a list/array of 5 strings, each representing a poker card in the format "5H" (5 of hearts), meaning the value of the card followed by the initial of its suit (Hearts, Spades, Diamonds or Clubs). No jokers included.
+         */
+        public static bool CheckIfFlush(string[] cards)
+        {
+            var c = cards[0].Last();
+            return cards.All(x => x.Last() == c);
+        }
+
     }
 }
