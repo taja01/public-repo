@@ -119,5 +119,33 @@ namespace CodeWarsTests.StringTasks
             return cards.All(x => x.Last() == c);
         }
 
+        /*
+         * https://www.codewars.com/kata/5a87449ab1710171300000fd
+         * A Tidy number is a number whose digits are in non-decreasing order.
+         * Given a number, Find if it is Tidy or not.
+         * Number passed is always Positive.
+         * Return the result as a Boolean
+         * tidyNumber (12) ==> return (true)
+         * The number's digits { 1 , 2 } are in non-Decreasing Order (i.e) 1 <= 2.
+         * tidyNumber (32) ==> return (false)
+         * The Number's Digits { 3, 2} are not in non-Decreasing Order (i.e) 3 > 2 .
+         * tidyNumber (1024) ==> return (false)
+         * The Number's Digits {1 , 0, 2, 4} are not in non-Decreasing Order as 0 <= 1 
+         */
+        public static bool TidyNumber(int n)
+        {
+            //var array = n.ToString().ToArray();
+            //for (var i = 1; i < array.Length; i++)
+            //{
+            //    if (array[i - 1] > array[i])
+            //    {
+            //        return false;
+            //    }
+            //}
+
+            //return true;
+
+            return n.ToString().SequenceEqual(n.ToString().OrderBy(x => x));
+        }
     }
 }
