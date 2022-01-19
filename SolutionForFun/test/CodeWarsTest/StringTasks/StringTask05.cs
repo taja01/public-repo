@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.StringTasks
@@ -146,6 +147,27 @@ namespace CodeWarsTests.StringTasks
             //return true;
 
             return n.ToString().SequenceEqual(n.ToString().OrderBy(x => x));
+        }
+
+        /*
+         * https://www.codewars.com/kata/5a731b36e19d14400f000c19
+         * Password Check - Binary to String
+         * A wealthy client has forgotten the password to his business website, but he has a list of possible passwords.
+         * His previous developer has left a file on the server with the name password.txt.
+         * You open the file and realize it's in binary format.
+         * Write a script that takes an array of possible passwords and a string of binary representing the possible password.
+         * Convert the binary to a string and compare to the password array.
+         * If the password is found, return the password string, else return false;
+         */
+        public static string DecodePass(string[] passArr, string bin)
+        {
+            //var byteList = (bin.Split(' ').Select(item => Convert.ToByte(item, 2))).ToList();
+            //var b = Encoding.ASCII.GetString(byteList.ToArray());
+
+            //return passArr.Contains(b) ? b : null;
+
+            var binString = string.Concat(bin.Split().Select(x => (char)Convert.ToInt32(x, 2)));
+            return passArr.Contains(binString) ? binString : null;
         }
     }
 }
