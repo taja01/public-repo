@@ -44,7 +44,7 @@ namespace CodeWarsTests.StringTasks
          */
         public static string AbbrevName(string name)
         {
-            return string.Join(".", name.Split(" ").Select(x => x[0]));
+            return string.Join(".", name.Split(" ").Select(x => x[0])).ToUpper();
         }
 
         /*
