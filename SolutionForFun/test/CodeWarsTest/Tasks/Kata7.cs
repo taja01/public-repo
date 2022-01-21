@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWarsTests.Tasks
 {
@@ -37,6 +38,22 @@ namespace CodeWarsTests.Tasks
         public static bool SetAlarm(bool employed, bool vacation)
         {
             return employed & !vacation;
+        }
+
+        //https://www.codewars.com/kata/5f70c883e10f9e0001c89673
+        public static int[] Flip(char dir, int[] arr)
+        {
+            //Array.Sort(arr);
+            //if (dir == 'L')
+            //{
+            //    Array.Reverse(arr);
+            //}
+
+            //return arr;
+
+            return dir == 'R'
+                ? arr.OrderBy(x => x).ToArray()
+                : arr.OrderByDescending(x => x).ToArray();
         }
     }
 }
