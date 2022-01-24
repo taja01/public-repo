@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+
 namespace CodeWarsTests.StringTasks
 {
     public partial class Kata
@@ -10,6 +11,18 @@ namespace CodeWarsTests.StringTasks
         public static string Solve(string a, string b)
         {
             return string.Concat(string.Concat(a.Where(x => !b.Contains(x)))) + string.Concat(string.Concat(b.Where(x => !a.Contains(x))));
+        }
+
+        /*
+         * https://www.codewars.com/kata/5a1e6323ffe75f71ae000026
+         */
+        public static bool IsTuringEquation(string str)
+        {
+            //var a = new string(str.Reverse().ToArray()).Split('+', '=').Select(x => int.Parse(x)).ToArray();
+
+            //return a[0] == a[1] + a[2];
+
+            return ("-" + string.Concat(str.Reverse())).Split('+', '=').Select(x => int.Parse(x)).Sum() == 0;
         }
     }
 }
