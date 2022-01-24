@@ -24,5 +24,23 @@ namespace CodeWarsTests.StringTasks
 
             return ("-" + string.Concat(str.Reverse())).Split('+', '=').Select(x => int.Parse(x)).Sum() == 0;
         }
+
+        /*
+         * https://www.codewars.com/kata/5a145ab08ba9148dd6000094
+         * In this Kata, you will write a function doubles that will remove double string characters that are adjacent to each other.
+         */
+        public static string Doubles(string str)
+        {
+            for (int i = 0; i < str.Length - 1; i++)
+            {
+                if (str[i] == str[i + 1])
+                {
+                    str = str.Remove(i, 2);
+                    i--;
+                }
+            }
+
+            return str;
+        }
     }
 }
