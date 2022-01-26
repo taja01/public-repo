@@ -36,7 +36,7 @@ namespace CodeWarsTests.StringTasks
                 if (str[i] == str[i + 1])
                 {
                     str = str.Remove(i, 2);
-                    i--;
+                    i = -1;
                 }
             }
 

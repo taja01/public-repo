@@ -55,5 +55,32 @@ namespace CodeWarsTests.Tasks
                 ? arr.OrderBy(x => x).ToArray()
                 : arr.OrderByDescending(x => x).ToArray();
         }
+
+        /*
+         * https://www.codewars.com/kata/5bb904724c47249b10000131
+         * Total amount of points
+         * if x>y - 3 points
+         * if x<y - 0 point
+         * if x=y - 1 point
+         */
+        public static int TotalPoints(string[] games)
+        {
+            //var sum = 0;
+            //foreach (var game in games)
+            //{
+            //    if (game[0] > game[2])
+            //    {
+            //        sum += 3;
+            //    }
+            //    else if (game[0] == game[2])
+            //    {
+            //        sum += 1;
+            //    }
+            //}
+
+            //return sum;
+
+            return games.Sum(x => x[0] == x[2] ? 1 : x[0] > x[2] ? 3 : 0);
+        }
     }
 }
