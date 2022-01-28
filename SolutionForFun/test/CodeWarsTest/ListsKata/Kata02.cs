@@ -56,5 +56,15 @@ namespace CodeWarsTests.ListsKata
             numbers.Remove(numbers.DefaultIfEmpty().Min());
             return numbers;
         }
+
+        /*
+         * https://www.codewars.com/kata/559590633066759614000063
+         * Write a function that returns both the minimum and maximum number of the given list/array.
+         */
+        public static int[] MinMax(int[] lst)
+        {
+            return new[] { lst.Min(), lst.Max() };
+        }
+
     }
 }
