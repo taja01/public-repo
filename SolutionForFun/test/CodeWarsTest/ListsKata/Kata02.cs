@@ -66,5 +66,15 @@ namespace CodeWarsTests.ListsKata
             return new[] { lst.Min(), lst.Max() };
         }
 
+        /*
+         * https://www.codewars.com/kata/588a3c3ef0fbc9c8e1000095
+         * You must implement a function that return the difference between the biggest and the smallest value in a list(lst) received as parameter.
+         */
+        public static int MaxDiff(int[] lst)
+        {
+            return lst.Any()
+                ? lst.Max() - lst.Min()
+                : 0;
+        }
     }
 }
