@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CodeWarsTests.ListsKata
 {
-    class Kata
+    partial class Kata
     {
         //Find the mean (average) of a list of numbers in an array.
         public static int FindAverage(int[] nums)
