@@ -86,5 +86,36 @@ namespace CodeWarsTests.ListsKata
         {
             return lst.Any() ? lst.Distinct().Sum() : (int?)null;
         }
+
+        /*
+         * https://www.codewars.com/kata/5b5e0ef007a26632c400002a
+         * Given an array (or list or vector) of arrays (or, guess what, lists or vectors) of integers, 
+         * your goal is to return the sum of a specific set of numbers, 
+         * starting with elements whose position is equal to the main array length and going down by one at each step.
+         */
+        public static int ElementsSum(int[][] arr, int d = 0)
+        {
+            //var s = 0;
+            //var m = arr.Length;
+            //foreach (var subArray in arr)
+            //{
+            //    if (subArray.Length >= m)
+            //    {
+            //        s += subArray.ElementAt(m - 1);
+            //    }
+            //    else
+            //    {
+            //        s += d;
+            //    }
+            //    m--;
+
+            //}
+
+            //return s;
+
+            return arr.Reverse()
+                .Select((subArray, index) => subArray.Length > index ? subArray[index] : d)
+                .Sum();
+        }
     }
 }
