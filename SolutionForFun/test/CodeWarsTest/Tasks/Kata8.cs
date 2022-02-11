@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace CodeWarsTests.Tasks
 {
@@ -21,6 +22,14 @@ namespace CodeWarsTests.Tasks
         public static int GetAge(string inputString)
         {
             return (int)char.GetNumericValue(inputString[0]);
+        }
+
+        /*
+         * https://www.codewars.com/kata/57b58827d2a31c57720012e8
+         */
+        public static double FuelPrice(double litres, double pricePerLitre)
+        {
+            return Math.Round((pricePerLitre - Math.Min(0.25, (int)(litres / 2) * 0.05) ) * litres, 2);
         }
     }
 }
