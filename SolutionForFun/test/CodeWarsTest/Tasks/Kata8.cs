@@ -50,5 +50,28 @@ namespace CodeWarsTests.Tasks
 
             return 0;
         }
+
+        //https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b
+        public static int[] HumanYearsCatYearsDogYears(int humanYears)
+        {
+            int animalCalc(int c)
+            {
+                var s = 15;
+                for (int i = 1; i < humanYears; i++)
+                {
+                    if (i == 1)
+                    {
+                        s += 9;
+                    }
+                    else
+                    {
+                        s += c;
+                    }
+                }
+                return s;
+            }
+
+            return new int[] { humanYears, animalCalc(4), animalCalc(5) };
+        }
     }
 }
