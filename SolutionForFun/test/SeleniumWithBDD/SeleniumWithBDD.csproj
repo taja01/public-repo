@@ -1,21 +1,57 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="appsettings.DEV.json;appsettings.Development.json;">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.1.0" />
+    <PackageReference Include="Selenium.WebDriver.GeckoDriver.Win64" Version="0.30.0.1" />
     <PackageReference Include="SpecFlow" Version="3.9.52" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.52" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.52" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\SeleniumWebDriverDemo\SeleniumWebDriverDemo.csproj" />
+    <Folder Include="Features\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\sut\PhpTravels\PhpTravels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ScreenshotExtension">
+      <HintPath>..\..\src\sut\PhpTravels\Lib\ScreenshotExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Zelenium.Core">
+      <HintPath>..\..\src\sut\PhpTravels\Lib\Zelenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zelenium.Shared">
+      <HintPath>..\..\src\sut\PhpTravels\Lib\Zelenium.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Zelenium.WebDriverManager">
+      <HintPath>..\..\src\sut\PhpTravels\Lib\Zelenium.WebDriverManager.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
