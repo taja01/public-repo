@@ -73,5 +73,35 @@ namespace CodeWarsTests.Tasks
 
             return new int[] { humanYears, animalCalc(4), animalCalc(5) };
         }
+
+        //return 2nd smallest
+        //Do not use linq!
+        public static int? SecondSmallest(int[] arr)
+        {
+            if (arr == null || arr.Length <= 1)
+            {
+                return null;
+            }
+
+
+            var firstSmallest = int.MaxValue;
+            var secondSmallest = int.MaxValue;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < firstSmallest)
+                {
+                    secondSmallest = firstSmallest;
+                    firstSmallest = arr[i];
+                }
+
+                if (arr[i] > firstSmallest && arr[i] < secondSmallest)
+                {
+                    secondSmallest = arr[i];
+                }
+            }
+
+            return secondSmallest;
+        }
     }
 }
