@@ -17,7 +17,7 @@ Scenario: Multiple objects
 		And the '3'. dog name is 'Zeus', '5' years old
 
 Scenario: Using step transformers
-	Given I have 'User1'
+	Given I have 'User1' user
 		Then user email addres is 'user1@test.com'
 
 Scenario Outline: Parsing enum

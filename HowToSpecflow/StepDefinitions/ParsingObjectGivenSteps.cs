@@ -23,10 +23,13 @@ namespace HowToSpecflow.StepDefinitions
             ScenarioContext["dogs"] = dogs;
         }
 
-        [Given(@"I have '(.*)'")]
-        public void GivenIHave(User user)
+        [Given(@"I have '(.*)' user")]
+        public void GivenIHaveUser(User user)
         {
-            ScenarioContext.ScenarioContainer.RegisterInstanceAs(user);
+            if (user != null)
+            {
+                ScenarioContext.ScenarioContainer.RegisterInstanceAs(user);
+            }
         }
 
         [Given(@"I have a '(.*)' enum")]

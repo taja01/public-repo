@@ -16,8 +16,6 @@ namespace HowToSpecflow.StepTransforms
                 "User2" => User.User2,
                 _ => throw new NotImplementedException($"User '{userText}' is not implemented. Please do it, or use other user")
             };
-
-
-        }
+        }       
     }
 }
