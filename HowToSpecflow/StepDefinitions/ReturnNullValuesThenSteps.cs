@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace HowToSpecflow.StepDefinitions
 {
     [Binding]
-    internal sealed class ReturnNullValuesSteps : Steps
+    internal sealed class ReturnNullValuesThenSteps : ValidationBase
     {
         [Then(@"'(.*)' user is not registered")]
         public void ThenUserIsNotRegistered(User user)
@@ -19,7 +19,8 @@ namespace HowToSpecflow.StepDefinitions
         {
             var key = "luckyNumber";
 
-            Assert.True(ScenarioContext.ContainsKey(key), $"Key '{key}' not exist");
+            ValidateKey(key);
+
             Assert.Null(ScenarioContext[key]);
         }
 
@@ -28,7 +29,8 @@ namespace HowToSpecflow.StepDefinitions
         {
             var key = "luckyDate";
 
-            Assert.True(ScenarioContext.ContainsKey(key), $"Key '{key}' not exist");
+            ValidateKey(key);
+
             Assert.Null(ScenarioContext[key]);
         }
 
@@ -37,11 +39,12 @@ namespace HowToSpecflow.StepDefinitions
         {
             var key = "luckyString";
 
-            Assert.True(ScenarioContext.ContainsKey(key), $"Key '{key}' not exist");
+            ValidateKey(key);
+
             Assert.Null(ScenarioContext[key]);
 
             string a = null;
-            
+
             Assert.AreEqual(a, ScenarioContext[key]);
             Assert.AreEqual(a?.ToString(), ScenarioContext[key]?.ToString());
         }
