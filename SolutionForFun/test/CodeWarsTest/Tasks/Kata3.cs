@@ -31,7 +31,7 @@ namespace CodeWarsTests.Tasks
                 var current = inputArray[i];
                 if (current <= prev)
                 {
-                    prev = prev + 1;
+                    prev++;
                     c += prev - current;
                     inputArray[i] = prev;
                 }
