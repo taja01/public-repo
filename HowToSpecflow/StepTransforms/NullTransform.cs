@@ -30,5 +30,17 @@ namespace HowToSpecflow.StepTransforms
         {
             return null;
         }
+
+        [StepArgumentTransformation(@"(null)")]
+        public decimal? GetNullDecimal(string text)
+        {
+            return null;
+        }
+
+        [StepArgumentTransformation(@"(null)")]
+        public bool? GetNullBool(string text)
+        {
+            return null;
+        }
     }
 }

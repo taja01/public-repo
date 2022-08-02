@@ -38,5 +38,12 @@ namespace HowToSpecflow.StepDefinitions
             ScenarioContext["myAnimal"] = animal;
         }
 
+        [Given(@"I have an agent:")]
+        public void GivenIHaveAnAgent(Table table)
+        {
+            var agent = table.CreateInstance<Agent>();
+
+            ScenarioContext.ScenarioContainer.RegisterInstanceAs(agent);
+        }
     }
 }
