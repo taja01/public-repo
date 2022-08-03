@@ -112,9 +112,17 @@ namespace CodeWarsTests.Tasks
                 return -1;
             }
 
-            return char.IsUpper(a) == char.IsUpper(b) 
-                ? 1 
+            return char.IsUpper(a) == char.IsUpper(b)
+                ? 1
                 : 0;
+        }
+
+        //https://www.codewars.com/kata/5bb0c58f484fcd170700063d
+        public static int Pillars(int numPill, int dist, int width)
+        {
+            if (numPill < 2) return 0;
+
+            return (numPill - 1) * dist + (numPill - 2) * width;
         }
     }
 }
