@@ -1,7 +1,7 @@
 ﻿using CodeWarsTests.Tasks;
 using NUnit.Framework;
 
-namespace CodeWarsTests.Tests.GeneralKataTests
+namespace CodeWarsTests.Tests._202208
 {
     [TestFixture]
     public class SameCaseTests
