@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace CodeWarsTests.Tests._202208
 {
-    [SetUpFixture]
+    [TestFixture]
     public class PillarsTests
     {
         [Test]

@@ -122,7 +122,27 @@ namespace CodeWarsTests.Tasks
         {
             if (numPill < 2) return 0;
 
-            return (numPill - 1) * dist + (numPill - 2) * width;
+            return (numPill - 1) * dist * 100 + (numPill - 2) * width;
+        }
+
+        //https://www.codewars.com/kata/5b73fe9fb3d9776fbf00009e
+        //Your task is to sum the differences between consecutive pairs in the array in descending order.
+        public static int SumOfDifferences(int[] arr)
+        {
+            //if (arr.Length < 2) return 0;
+
+            //var ordered = arr.OrderByDescending(x => x).Sum((x,);
+
+            //var sum = 0;
+
+            //for (int i = 1; i < ordered.Count(); i++)
+            //{
+            //    sum += ordered.ElementAt(i - 1) - ordered.ElementAt(i);
+            //}
+
+            //return sum;
+
+            return arr.Length > 1 ? arr.Max() - arr.Min() : 0;
         }
     }
 }
