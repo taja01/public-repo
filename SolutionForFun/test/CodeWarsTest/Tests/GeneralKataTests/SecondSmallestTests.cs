@@ -29,13 +29,13 @@ namespace CodeWarsTests.Tests.GeneralKataTests
         [Test]
         public void Test4()
         {
-            Assert.AreEqual(3, Kata.SecondSmallest(new int[] { 1, 3, 1, 1, 1 }));
+            Assert.AreEqual(1, Kata.SecondSmallest(new int[] { 1, 3, 1, 1, 1 }));
         }
 
         [Test]
         public void Test5()
         {
-            Assert.AreEqual(1, Kata.SecondSmallest(new int[] { 0, 1, 0, 1, 0, 1, 0, 1 }));
+            Assert.AreEqual(0, Kata.SecondSmallest(new int[] { 0, 1, 0, 1, 0, 1, 0, 1 }));
         }
     }
 }

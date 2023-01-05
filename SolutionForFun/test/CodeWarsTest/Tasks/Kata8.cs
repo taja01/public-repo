@@ -93,9 +93,8 @@ namespace CodeWarsTests.Tasks
                 {
                     secondSmallest = firstSmallest;
                     firstSmallest = arr[i];
-                }
-
-                if (arr[i] > firstSmallest && arr[i] < secondSmallest)
+                } 
+                else if (arr[i] < secondSmallest)
                 {
                     secondSmallest = arr[i];
                 }
