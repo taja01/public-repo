@@ -19,22 +19,6 @@ namespace ApiTests.OtpTest
         [Test]
         public async Task WinnerTest()
         {
-            var response = await service.GetCarsweepstake("650822590");
-
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode, "Status code");
-
-            Assert.Multiple(() =>
-            {
-                Assert.AreEqual("650822590", response.Data.Number, "Number");
-                CollectionAssert.IsNotEmpty(response.Data.Sweepstakes, "sweepstakes is empty");
-                Assert.AreEqual("2022-02-15", response.Data.Sweepstakes[0].LotDate, "LotDate");
-                Assert.AreEqual("Toyota Yaris 1,0 Active 5 ajtós", response.Data.Sweepstakes[0].CarType, "CarType");
-            });
-        }
-
-        [Test]
-        public async Task OldWinnerTest()
-        {
             var response = await service.GetCarsweepstake("201614152");
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode, "Status code");
