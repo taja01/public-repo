@@ -60,26 +60,12 @@ namespace CodeWarsTests.StringTasks {
          */
 
         public static string AlphabetPosition(string text) {
-
-            //final:
             return string.Join(" ", text.ToLower().Where(c => char.IsLetter(c)).Select(x => (int)x - 96));
 
             //other solutions:
             //return string.Join(" ", text.ToLower().Where(char.IsLetter).Select(x => x - 'a' + 1));
 
             //return string.Join(" ", text.Where(char.IsLetter).Select(c => c & 31));
-
-            //thinking phase..
-            //var newString = new StringBuilder();
-
-            //foreach (var ch in text.ToLower()) {
-            //    if (char.IsLetter(ch)) {
-            //        newString.Append($"{(ch - 96)} ");
-            //    }
-            //}
-
-            //return newString.ToString().TrimEnd();
-
         }
     }
 }
