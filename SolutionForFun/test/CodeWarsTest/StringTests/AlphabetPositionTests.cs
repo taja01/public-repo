@@ -2,6 +2,8 @@
 using NUnit.Framework;
 
 namespace CodeWarsTests.StringTests {
+
+    [TestFixture]
     internal class AlphabetPositionTests {
 
         [Test]
