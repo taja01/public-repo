@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AsyncToolBoilerTemplate": {
+      "commandName": "Project",
+      "commandLineArgs": "-e DEV"
+    }
+  }
+}
