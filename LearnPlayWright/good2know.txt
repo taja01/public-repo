@@ -1,0 +1,24 @@
+node version:
+node -v
+
+init:
+code . 
+
+extension:
+Playwright Test for VSCode
+
+ctrl + shift + p
+install playwright
+then select browsers
+
+
+run test -> green arrow (for level0)
+
+headless: playwright.config.ts -> find 'use:' block and type headless: false,
+
+
+export default defineConfig({
+  testDir: './tests',
+  testMatch: ["login.test.ts"], <--- filter tests
+
+  env: npm install dotenv --save

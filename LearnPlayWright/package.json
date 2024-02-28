@@ -1,0 +1,18 @@
+{
+  "name": "learnplaywright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.36.2"
+  },
+  "scripts": {
+    "vscode-debug": "playwright test --config ./playwright.config.ts --workers=1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
