@@ -1,0 +1,10 @@
+Insall K6
+winget install k6 --source winget
+
+how to run in terminal: k6 run .\sample_test.js
+
+Options:
+https://github.com/grafana/k6-learn/blob/main/Modules/II-k6-Foundations/06-k6-Load-Test-Options.md
+
+Understand the result: 
+https://github.com/grafana/k6-learn/blob/main/Modules/II-k6-Foundations/03-Understanding-k6-results.md
