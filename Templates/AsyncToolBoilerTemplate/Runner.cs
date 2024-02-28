@@ -26,8 +26,13 @@ namespace AsyncToolBoilerTemplate
 
             using (var scope = ServiceProvider.CreateScope())
             {
-                var service = scope.ServiceProvider.GetRequiredService<IMyService>();
-                await service.Work();
+                var type = AppDomain.CurrentDomain.GetAssemblies()
+                    .SelectMany(a => a.GetTypes())
+                    .Single(t => t.Name.Equals(commandLineOptions.ServiceType, StringComparison.OrdinalIgnoreCase));
+
+
+                var service = scope.ServiceProvider.GetRequiredService(type) as IRunningService;
+                await service.Synchronize();
             }
 
             Logger.LogInformation("Finished in total: {ellapsedSeconds} seconds", sw.Elapsed.TotalSeconds);
@@ -62,10 +67,11 @@ namespace AsyncToolBoilerTemplate
                 loggingBuilder.ClearProviders();
                 var loggerConfiguration = new LoggerConfiguration().Enrich.FromLogContext();
 
+                loggerConfiguration = loggerConfiguration.Enrich.WithThreadId();
                 loggerConfiguration = loggerConfiguration.MinimumLevel.Information();
                 loggerConfiguration = loggerConfiguration.WriteTo.Debug();
                 loggerConfiguration = loggerConfiguration.WriteTo.Trace();
-                loggerConfiguration = loggerConfiguration.WriteTo.File("log.txt");
+                loggerConfiguration = loggerConfiguration.WriteTo.File("log.txt", rollOnFileSizeLimit: true, fileSizeLimitBytes: 500_000);
                 loggerConfiguration = loggerConfiguration.WriteTo.Console(theme: AnsiConsoleTheme.Literate);
                 loggerConfiguration = loggerConfiguration.ReadFrom.Configuration(Configuration);
 
@@ -81,7 +87,9 @@ namespace AsyncToolBoilerTemplate
             builder.ConfigureServices(services =>
             {
                 services.AddOptions();
+                services.AddTransient(typeof(ParalellExecutionService<>), typeof(ParalellExecutionService<>));
                 services.AddScoped<IMyService, MyService>();
+                services.AddScoped<ITestParallelService, TestService>();
 
                 ConfigureServices?.Invoke(services);
 
@@ -96,11 +104,15 @@ namespace AsyncToolBoilerTemplate
                 if (commandLineOptions != null)
                 {
                     options.Environment = commandLineOptions.Environment;
+                    options.ServiceType = commandLineOptions.ServiceType;
+                    options.NumberOfThreads = commandLineOptions.NumberOfThreads;
                 }
 
                 services.Configure<CommandLineOptions>(o =>
                 {
                     o.Environment = options.Environment;
+                    o.ServiceType = options.ServiceType;
+                    o.NumberOfThreads = options.NumberOfThreads;
                 });
 
                 services.AddSingleton(options);
@@ -110,8 +122,6 @@ namespace AsyncToolBoilerTemplate
             ServiceProvider = host.Services;
             Logger = ServiceProvider.GetRequiredService<ILogger<Program>>();
             Logger.LogInformation($"{GetType().Assembly.FullName}");
-
-            ////Logger.LogInformation(Resources.Extensions.ASCIIArt);
 
             Logger.LogInformation("Host initialized.");
             Logger.LogInformation("Environment: {environment}.", EnvironmentName);

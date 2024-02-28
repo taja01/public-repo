@@ -1,6 +1,6 @@
 ﻿namespace AsyncToolBoilerTemplate.Services
 {
-    internal interface IMyService : IRunningService
+    internal interface ITestParallelService : IRunningService
     {
     }
 }

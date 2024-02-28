@@ -12,7 +12,7 @@ namespace AsyncToolBoilerTemplate.Services
             Logger = logger;
             Options = options;
         }
-        public async Task Work()
+        public async Task Synchronize()
         {
             Logger.LogWarning("TODO");
             Logger.LogInformation(Options.Environment);
