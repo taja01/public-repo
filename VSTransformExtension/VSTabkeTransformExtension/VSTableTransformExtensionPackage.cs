@@ -26,6 +26,7 @@ namespace VSTableTransformExtension
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(VSTableTransformExtensionPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideOptionPage(typeof(OptionsPage), "Transform Specflow table config", "Options", 0, 0, true)]
     public sealed class VSTableTransformExtensionPackage : AsyncPackage
     {
         /// <summary>

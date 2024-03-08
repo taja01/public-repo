@@ -105,6 +105,10 @@ namespace VSTableTransformExtension
 
             if (lines.Length == 2 && lines.First().Count(x => x == '|') > 2)
             {
+                var page = (OptionsPage)package.GetDialogPage(typeof(OptionsPage));
+                string firstHeader = page.FirstHeader;
+                string secondHeader = page.SecondHeader;
+
                 string[] properties = lines[0].Split('|');
                 string[] values = lines[1].Split('|');
 
@@ -122,7 +126,7 @@ namespace VSTableTransformExtension
                 }
 
                 var stringBuilder = new StringBuilder();
-                stringBuilder.AppendLine("| property | value |");
+                stringBuilder.AppendLine($"| {firstHeader} | {secondHeader} |");
                 foreach (var pair in dict.OrderBy(x => x.Key))
                 {
                     if (pair.Key.Length > 0)
