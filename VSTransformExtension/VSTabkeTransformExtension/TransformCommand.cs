@@ -138,6 +138,23 @@ namespace VSTableTransformExtension
                 // Replace the selected text with the transformed one
                 startPoint.ReplaceText(endPoint, stringBuilder.ToString(), (int)vsEPReplaceTextOptions.vsEPReplaceTextAutoformat);
             }
+            else if (lines.Count() > 2 && lines.First().Count(c => c == '|') == 3)
+            {
+                var dict = new Dictionary<string, string>();
+                foreach (var line in lines.Skip(1))
+                {
+                    var cells = line.Split('|');
+                    if (cells.Length == 4)
+                    {
+                        dict[cells[1].Trim()] = cells[2].Trim();
+                    }
+                }
+
+                var transformedText = $"|{string.Join("|", dict.Keys)}|\n|{string.Join("|", dict.Values)}|";
+
+                // Replace the selected text with the transformed text
+                startPoint.ReplaceText(endPoint, transformedText, (int)vsEPReplaceTextOptions.vsEPReplaceTextAutoformat);
+            }
             else
             {
                 // Show an error message
