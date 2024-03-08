@@ -98,10 +98,10 @@ namespace VSTableTransformExtension
 
             var startPoint = textDocument.Selection.TopPoint.CreateEditPoint();
             var endPoint = textDocument.Selection.BottomPoint.CreateEditPoint();
-            string selectedText = startPoint.GetText(endPoint);
+            var selectedText = startPoint.GetText(endPoint);
 
             // Write your logic here to transform the selected text:
-            string[] lines = selectedText.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+            var lines = selectedText.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
             if (lines.Length == 2 && lines.First().Count(x => x == '|') > 2)
             {
