@@ -106,21 +106,21 @@ namespace VSTableTransformExtension
             if (lines.Length == 2 && lines.First().Count(x => x == '|') > 2)
             {
                 var page = (OptionsPage)package.GetDialogPage(typeof(OptionsPage));
-                string firstHeader = page.FirstHeader;
-                string secondHeader = page.SecondHeader;
+                var firstHeader = page.FirstHeader;
+                var secondHeader = page.SecondHeader;
 
-                string[] properties = lines[0].Split('|');
-                string[] values = lines[1].Split('|');
+                var properties = lines[0].Split('|');
+                var values = lines[1].Split('|');
 
-                for (int i = 0; i < properties.Length; i++)
+                for (var i = 0; i < properties.Length; i++)
                 {
                     properties[i] = properties[i].Trim();
                     values[i] = values[i].Trim();
                 }
 
                 // Transform lines into a dictionary
-                Dictionary<string, string> dict = new Dictionary<string, string>();
-                for (int i = 0; i < properties.Length; i++)
+                var dict = new Dictionary<string, string>();
+                for (var i = 0; i < properties.Length; i++)
                 {
                     dict[properties[i]] = values[i];
                 }
@@ -141,8 +141,8 @@ namespace VSTableTransformExtension
             else
             {
                 // Show an error message
-                string message = "Selected text doesn't match expected format.";
-                string title = "Table Transform";
+                var message = "Selected text doesn't match expected format.";
+                var title = "Table Transform";
                 VsShellUtilities.ShowMessageBox(
                     this.package,
                     message,
