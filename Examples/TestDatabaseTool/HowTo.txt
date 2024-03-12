@@ -1,0 +1,29 @@
+﻿install: dotnet tool install --global dotnet-ef 
+
+check version: dotnet ef --version (in terminal window - ps)
+
+update: dotnet tool update --global dotnet-ef 
+
+How:
+
+Package Manager Console: (Tools -> Nuget Package Manager -> Console)
+    - set default project to TestDatabase
+
+if database does not exist and no migration files:
+make sure that this tool installed: Install-Package Microsoft.EntityFrameworkCore.Tools 
+
+then: 
+Add-Migration InitialCreate
+Update-Database
+
+
+Add-Migration {changeName} -startupProject TestDatabase
+Example: 
+Add-Migration 'init' -startupProject TestDatabaseTool -Context MyDbContext
+
+set up db in local:
+update-database -Context MyDbContext
+
+
+Rever:
+To undo this action, use Remove-Migration.
