@@ -427,7 +427,6 @@ namespace PetStore
 
         public PetStoreClient(System.Net.Http.HttpClient httpClient)
         {
-            BaseUrl = "https://petstore.swagger.io/v2";
             _httpClient = httpClient;
         }
 
@@ -436,18 +435,6 @@ namespace PetStore
             var settings = new Newtonsoft.Json.JsonSerializerSettings();
             UpdateJsonSerializerSettings(settings);
             return settings;
-        }
-
-        public string BaseUrl
-        {
-            get { return _baseUrl; }
-            [System.Diagnostics.CodeAnalysis.MemberNotNull(nameof(_baseUrl))]
-            set
-            {
-                _baseUrl = value;
-                if (!string.IsNullOrEmpty(_baseUrl) && !_baseUrl.EndsWith("/"))
-                    _baseUrl += '/';
-            }
         }
 
         protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings { get { return _settings.Value; } }
@@ -513,7 +500,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet/{petId}/uploadImage"
                     urlBuilder_.Append("pet/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(petId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -605,7 +592,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet"
                     urlBuilder_.Append("pet");
 
@@ -698,7 +685,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("PUT");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet"
                     urlBuilder_.Append("pet");
 
@@ -808,7 +795,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet/findByStatus"
                     urlBuilder_.Append("pet/findByStatus");
                     urlBuilder_.Append('?');
@@ -914,7 +901,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet/findByTags"
                     urlBuilder_.Append("pet/findByTags");
                     urlBuilder_.Append('?');
@@ -1018,7 +1005,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet/{petId}"
                     urlBuilder_.Append("pet/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(petId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1127,7 +1114,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet/{petId}"
                     urlBuilder_.Append("pet/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(petId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1220,7 +1207,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("DELETE");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "pet/{petId}"
                     urlBuilder_.Append("pet/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(petId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1323,7 +1310,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "store/order"
                     urlBuilder_.Append("store/order");
 
@@ -1424,7 +1411,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "store/order/{orderId}"
                     urlBuilder_.Append("store/order/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(orderId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1529,7 +1516,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("DELETE");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "store/order/{orderId}"
                     urlBuilder_.Append("store/order/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(orderId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1629,7 +1616,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "store/inventory"
                     urlBuilder_.Append("store/inventory");
 
@@ -1721,7 +1708,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/createWithArray"
                     urlBuilder_.Append("user/createWithArray");
 
@@ -1799,7 +1786,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/createWithList"
                     urlBuilder_.Append("user/createWithList");
 
@@ -1874,7 +1861,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/{username}"
                     urlBuilder_.Append("user/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(username, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1988,7 +1975,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("PUT");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/{username}"
                     urlBuilder_.Append("user/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(username, System.Globalization.CultureInfo.InvariantCulture)));
@@ -2090,7 +2077,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("DELETE");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/{username}"
                     urlBuilder_.Append("user/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(username, System.Globalization.CultureInfo.InvariantCulture)));
@@ -2194,7 +2181,7 @@ namespace PetStore
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/login"
                     urlBuilder_.Append("user/login");
                     urlBuilder_.Append('?');
@@ -2287,7 +2274,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("GET");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user/logout"
                     urlBuilder_.Append("user/logout");
 
@@ -2371,7 +2358,7 @@ namespace PetStore
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+
                     // Operation Path: "user"
                     urlBuilder_.Append("user");
 
