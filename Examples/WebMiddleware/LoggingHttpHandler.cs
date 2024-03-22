@@ -34,7 +34,7 @@ namespace WebMiddleware
 
                 var success = response?.IsSuccessStatusCode ?? false;
 
-                _logger.Log(success ? LogLevel.Information : LogLevel.Warning, "Outgoing Request: {method} {url}, Body: {body}.", request?.Method, request?.RequestUri, requestBody);
+                _logger.Log(success ? LogLevel.Trace : LogLevel.Warning, "Outgoing Request: {method} {url}, Body: {body}.", request?.Method, request?.RequestUri, requestBody);
 
                 string? responseBody = null;
                 if (response?.Content != null)
@@ -42,7 +42,7 @@ namespace WebMiddleware
                     responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 }
 
-                _logger.Log(success ? LogLevel.Information : LogLevel.Warning, "Incoming Response: {response}, Body: {body}.", response?.ToString(), responseBody);
+                _logger.Log(success ? LogLevel.Trace : LogLevel.Warning, "Incoming Response: {response}, Body: {body}.", response?.ToString(), responseBody);
 
                 return response;
             }
