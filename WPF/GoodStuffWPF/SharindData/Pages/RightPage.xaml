@@ -1,0 +1,24 @@
+﻿<Page x:Class="SharindData.Pages.RightPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SharindData.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="RightPage">
+
+    <Grid>
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBox x:Name="tbTextBox" 
+                     HorizontalAlignment="Left" 
+                     TextWrapping="Wrap" Text="TextBox"
+                     VerticalAlignment="Top" 
+                     Width="120"/>
+            <ListBox x:Name="lbBox"  
+                     Width="120" 
+                     Height="100" />
+        </WrapPanel>
+
+    </Grid>
+</Page>
